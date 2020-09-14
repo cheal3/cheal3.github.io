@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Do it! 리액트 프로그래밍 1일차 | Choi Dong Wook blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.React의 특징React는 페이스북을 개발할 때 사용한 기술이며, 공개 소프트웨어이다. 리액트의 가장 큰 특징은 ‘화면 출력에 특화된 프레임워크’라고 할 수 있겠다.   JS에는 제이쿼리와 핸들바 라는 라이브러리가 있는데 이 라이브러리들의 치명적인 단점은 화면이 커질수록 화면을 그리는 시간이 길어진다는 점이다. 하지만 이보다 더 심각한 문제는 화면의">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Do it! 리액트 프로그래밍 1일차">
+<meta property="og:url" content="http://cheal3.github.io/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/index.html">
+<meta property="og:site_name" content="Choi Dong Wook blog">
+<meta property="og:description" content="1.React의 특징React는 페이스북을 개발할 때 사용한 기술이며, 공개 소프트웨어이다. 리액트의 가장 큰 특징은 ‘화면 출력에 특화된 프레임워크’라고 할 수 있겠다.   JS에는 제이쿼리와 핸들바 라는 라이브러리가 있는데 이 라이브러리들의 치명적인 단점은 화면이 커질수록 화면을 그리는 시간이 길어진다는 점이다. 하지만 이보다 더 심각한 문제는 화면의">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2020-09-14T02:43:22.000Z">
+<meta property="article:modified_time" content="2020-09-14T02:50:28.001Z">
+<meta property="article:author" content="cheal3@naver.com">
+<meta property="article:tag" content="IT">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Choi Dong Wook blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Choi Dong Wook blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="검색"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cheal3.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-doit리액트/1일차" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/" class="article-date">
+  <time datetime="2020-09-14T02:43:22.000Z" itemprop="datePublished">2020-09-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/React/">React</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Do it! 리액트 프로그래밍 1일차
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-React의-특징"><a href="#1-React의-특징" class="headerlink" title="1.React의 특징"></a>1.React의 특징</h1><p>React는 페이스북을 개발할 때 사용한 기술이며, 공개 소프트웨어이다. 리액트의 가장 큰 특징은 ‘화면 출력에 특화된 프레임워크’라고 할 수 있겠다.<br>   <br/><br>JS에는 제이쿼리와 핸들바 라는 라이브러리가 있는데 이 라이브러리들의 치명적인 단점은 화면이 커질수록 화면을 그리는 시간이 길어진다는 점이다. 하지만 이보다 더 심각한 문제는 화면의 일부분만 수정되어도 화면 전체를 다시 그린다는 점이다.  화면 구성을 트리 구조로 생각하면 부모노드가 바뀌었을때 자식노드까지 전부 바뀌어야 하므로 비효율적이라고 생각하면 쉽다.<br>   <br/><br>페이스북 개발자들은  이런 문제를 해결하기 위해 게임 엔진 원리(다음 장면에 필요한 화면을 미리 그려 두는 방법으로 화면을 빠르게 전환하는 방식) 을 도입했다.  다음에 나타날 화면의 일부(노드)를 미리 그려 놓고 변경된 화면의 일부(노드)만 수정하는 <strong>가상 화면(Virtual DOM)</strong> 기술이 바로 이것이다.</p>
+<br/>
+
+<h1 id="2-npm"><a href="#2-npm" class="headerlink" title="2.npm"></a>2.npm</h1><p><strong>npm</strong> 은 httpsL//<a target="_blank" rel="noopener" href="http://www.npmjs.com에서/">www.npmjs.com에서</a> 필요한 라이브러리를 내려받아 설치하고 삭제하는 등의 관리를 해주는 프로그램이다.  npm은 실제로 node_modules 폴더에 라이브러리를 내려받아 저장하고 package.json이라는 파일에 설치된 라이브러리의 정보를 적어 저장한다.<br><br/></p>
+<h4>라이브러리 명세를 따로 관리하는 이유?</h4>
+
+<p>node_modules에 저장되는 라이브러리의 용량이 굉장히 크기 때문에 프로젝트를 공유할 때 용량이 큰 라이브러리까지 전송할 필요 없이 라이브러리 명세와 코드만 전달하면 되기 때문이다.<br><br/></p>
+<h4>웹팩이란?</h4>
+
+<p>웹팩은 프로젝트에 사용된 파일을 분석하여 기존 웹 문서 파일로 변환하는 도구이다.</p>
+<p>쉽게말하면 웹 브라우저가 해석할 수 없는 파일(sass  , cjs …)을  js , css 등 웹 브라우저가 해석할 수 있는 형태로 변환해준다.</p>
+<br/>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/" data-id="ckf1xi0qt0000zgv4fcvbgwp9" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/10/%EC%82%AC%EC%A7%84/%ED%85%8C%EC%8A%A4%ED%8A%B8/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">이전</strong>
+      <div class="article-nav-title">화질테스트</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">카테고리</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Test/">Test</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%82%AC%EC%A7%84/">사진</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-Node-js/">React + Node.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/%EC%9B%B9/">웹</a></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">아카이브</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">9월 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">8월 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">최근 포스트</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/10/%EC%82%AC%EC%A7%84/%ED%85%8C%EC%8A%A4%ED%8A%B8/">화질테스트</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/09/%EA%B3%B5%EB%B6%80/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/">브라우저는 어떻게 작동하는가??</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%993/">React x Express 연동하여 데이터 전송하기(3)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%992/">React x Express 연동하여 데이터 전송하기(2)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 cheal3@naver.com<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

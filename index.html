@@ -65,6 +65,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-doit리액트/1일차" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/" class="article-date">
+  <time datetime="2020-09-14T02:43:22.000Z" itemprop="datePublished">2020-09-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/React/">React</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-React의-특징"><a href="#1-React의-특징" class="headerlink" title="1.React의 특징"></a>1.React의 특징</h1><p>React는 페이스북을 개발할 때 사용한 기술이며, 공개 소프트웨어이다. 리액트의 가장 큰 특징은 ‘화면 출력에 특화된 프레임워크’라고 할 수 있겠다.<br>   <br/><br>JS에는 제이쿼리와 핸들바 라는 라이브러리가 있는데 이 라이브러리들의 치명적인 단점은 화면이 커질수록 화면을 그리는 시간이 길어진다는 점이다. 하지만 이보다 더 심각한 문제는 화면의 일부분만 수정되어도 화면 전체를 다시 그린다는 점이다.  화면 구성을 트리 구조로 생각하면 부모노드가 바뀌었을때 자식노드까지 전부 바뀌어야 하므로 비효율적이라고 생각하면 쉽다.<br>   <br/><br>페이스북 개발자들은  이런 문제를 해결하기 위해 게임 엔진 원리(다음 장면에 필요한 화면을 미리 그려 두는 방법으로 화면을 빠르게 전환하는 방식) 을 도입했다.  다음에 나타날 화면의 일부(노드)를 미리 그려 놓고 변경된 화면의 일부(노드)만 수정하는 <strong>가상 화면(Virtual DOM)</strong> 기술이 바로 이것이다.</p>
+<br/>
+
+<h1 id="2-npm"><a href="#2-npm" class="headerlink" title="2.npm"></a>2.npm</h1><p><strong>npm</strong> 은 httpsL//<a target="_blank" rel="noopener" href="http://www.npmjs.com에서/">www.npmjs.com에서</a> 필요한 라이브러리를 내려받아 설치하고 삭제하는 등의 관리를 해주는 프로그램이다.  npm은 실제로 node_modules 폴더에 라이브러리를 내려받아 저장하고 package.json이라는 파일에 설치된 라이브러리의 정보를 적어 저장한다.<br><br/></p>
+<h4>라이브러리 명세를 따로 관리하는 이유?</h4>
+
+<p>node_modules에 저장되는 라이브러리의 용량이 굉장히 크기 때문에 프로젝트를 공유할 때 용량이 큰 라이브러리까지 전송할 필요 없이 라이브러리 명세와 코드만 전달하면 되기 때문이다.<br><br/></p>
+<h4>웹팩이란?</h4>
+
+<p>웹팩은 프로젝트에 사용된 파일을 분석하여 기존 웹 문서 파일로 변환하는 도구이다.</p>
+<p>쉽게말하면 웹 브라우저가 해석할 수 없는 파일(sass  , cjs …)을  js , css 등 웹 브라우저가 해석할 수 있는 형태로 변환해준다.</p>
+<br/>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/" data-id="ckf1xi0qt0000zgv4fcvbgwp9" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-사진/테스트" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/09/10/%EC%82%AC%EC%A7%84/%ED%85%8C%EC%8A%A4%ED%8A%B8/" class="article-date">
@@ -805,66 +857,6 @@
 
 
   
-    <article id="post-고객관리예제 공부/project-9" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/03/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-9/" class="article-date">
-  <time datetime="2020-09-03T06:21:10.000Z" itemprop="datePublished">2020-09-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/React-Node-js/">React + Node.js</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/03/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-9/">React와 Node.js로 만드는 고객 관리 시스템 개발-9</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="React의-라이프-사이클-및-API-로딩-처리"><a href="#React의-라이프-사이클-및-API-로딩-처리" class="headerlink" title="React의 라이프 사이클 및 API 로딩 처리"></a>React의 라이프 사이클 및 API 로딩 처리</h1><p>이번에는 API 로딩 메시지를 웹 사이트 상에 출력해보자 프로그레스 바 UI 는 Material UI에 이미 구현되어 있다.</p>
-<blockquote>
-<p>Material UI 프로그레스 바 : <a target="_blank" rel="noopener" href="https://material-ui.com/demos/progress/">https://material-ui.com/demos/progress/</a></p>
-</blockquote>
-<h2>React의 라이프 사이클 </h2>
-
-<p>기본적으로 React 라이브러리가 처음 컴포넌트를 실행할 때는 다음의 순서를 따른다.</p>
-<ol>
-<li>constructor()</li>
-<li>componentWillMount()</li>
-<li>render()</li>
-<li>componentDidMount()</li>
-</ol>
-<p>그리고 컴포넌트의 props 혹은 state가 변경될 때는 <code>shouldComponentUpdate()</code>  함수 등이 사용되어  실질적으로 다시 render() 함수를 불러와 뷰를 갱신하게 된다. 또한 컴포넌트가 삭제될 때는 <code>componentWillMount()</code> 함수가 실행된다는 특징이 있다.  </p>
-<p>따라서 일반적으로 API를 불러와서 웹 사이트 화면에 특정한 뷰를 출력하고자 한다면 componentDidMount() 함수에서 API를 비동기적으로 호출하면 된다. 이후에 API에서 응답이 돌아왔을 때 뷰가 갱신되므로 API 응답 결과를 출력할 수 있다. 비동기적으로 호출한다는 점에서 API 서버에서 응답하지 않으면 사용자에게 로딩 화면만 출력이 된다.  </p>
-<p>Circular Progress 라이브러리를 이용하여 프로그레스 바를 API 로딩 메시지로 사용하자.</p>
-<figure class="highlight javascript"><figcaption><span>App.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> Customer <span class="keyword">from</span> <span class="string">&#x27;./components/Customer&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./App.css&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> Paper <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/Paper&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> Table <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/Table&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> TableHead <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/TableHead&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> TableBody <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/TableBody&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> TableRow <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/TableRow&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> TableCell <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/TableCell&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> CircularProgress <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/CircularProgress&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; withStyles &#125; <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/styles&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> styles = <span class="function"><span class="params">theme</span> =&gt;</span> (&#123;</span><br><span class="line">  root: &#123;</span><br><span class="line">    width: <span class="string">&quot;100%&quot;</span>,</span><br><span class="line">    marginTop: theme.spacing.unit * <span class="number">3</span>,</span><br><span class="line">    overflowX: <span class="string">&quot;auto&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    table: &#123;</span><br><span class="line">      minWidth: <span class="number">1080</span></span><br><span class="line">    &#125;,</span><br><span class="line">    progress:&#123;</span><br><span class="line">      margin: theme.spacing.unit *<span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  state = &#123;</span><br><span class="line">    customers: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    completed: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount()&#123;</span><br><span class="line">    <span class="built_in">this</span>.timer = <span class="built_in">setInterval</span>(<span class="built_in">this</span>.progress,<span class="number">20</span>);</span><br><span class="line">    <span class="built_in">this</span>.callApi()</span><br><span class="line">      .then(<span class="function"><span class="params">res</span> =&gt;</span> <span class="built_in">this</span>.setState(&#123;<span class="attr">customers</span>:res&#125;))</span><br><span class="line">      .catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err));</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUnmount()&#123;</span><br><span class="line">    <span class="built_in">clearInterval</span>(<span class="built_in">this</span>.timer);</span><br><span class="line">  &#125;</span><br><span class="line">  callApi = <span class="keyword">async</span>() =&gt;&#123;</span><br><span class="line">    <span class="keyword">const</span> response = <span class="keyword">await</span> fetch(<span class="string">&#x27;/api/customers&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> body = <span class="keyword">await</span> response.json();</span><br><span class="line">    <span class="keyword">return</span> body;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  progress = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;completed &#125; = <span class="built_in">this</span>.state;</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123; <span class="attr">completed</span>:completed &gt;=<span class="number">100</span>?<span class="number">0</span> : completed +<span class="number">1</span>&#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; classes &#125; = <span class="built_in">this</span>.props;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;Paper className = &#123;classes.root&#125;&gt;</span><br><span class="line">        &lt;Table className = &#123;classes.table&#125;&gt;</span><br><span class="line">          &lt;TableHead&gt;</span><br><span class="line">            &lt;TableRow&gt;</span><br><span class="line">              &lt;TableCell&gt; 번호 &lt;/TableCell&gt;</span><br><span class="line">              &lt;TableCell&gt; 이미지 &lt;/TableCell&gt;</span><br><span class="line">              &lt;TableCell&gt; 이름 &lt;/TableCell&gt;</span><br><span class="line">              &lt;TableCell&gt; 생년월일 &lt;/TableCell&gt;</span><br><span class="line">              &lt;TableCell&gt; 성별 &lt;/TableCell&gt;</span><br><span class="line">              &lt;TableCell&gt; 직업 &lt;/TableCell&gt;</span><br><span class="line">            &lt;/TableRow&gt;</span><br><span class="line">          &lt;/TableHead&gt;</span><br><span class="line">          &lt;TableBody&gt;</span><br><span class="line">          &#123;<span class="built_in">this</span>.state.customers ? <span class="built_in">this</span>.state.customers.map(<span class="function"><span class="params">c</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Customer</span> <span class="attr">key</span>=<span class="string">&#123;c.id&#125;</span> <span class="attr">id</span>=<span class="string">&#123;c.id&#125;</span> <span class="attr">image</span>=<span class="string">&#123;c.image&#125;</span> <span class="attr">name</span>=<span class="string">&#123;c.name&#125;</span> <span class="attr">birthday</span>=<span class="string">&#123;c.birthday&#125;</span> <span class="attr">gender</span>=<span class="string">&#123;c.gender&#125;</span> <span class="attr">job</span>=<span class="string">&#123;c.job&#125;</span> /&gt;</span></span></span><br><span class="line">            &#125;) : <span class="string">&#x27;&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">          &lt;/TableBody&gt;</span><br><span class="line">      &lt;/Table&gt;</span><br><span class="line">    &lt;/Paper&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withStyles(styles)(App);</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>결과 화면</strong><br><img src="/img/9%EA%B2%B0%EA%B3%BC.png">  </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/03/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-9/" data-id="cketmsojf000ry0v40m7b822e" class="article-share-link">공유</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -880,7 +872,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">카테고리</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Test/">Test</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%82%AC%EC%A7%84/">사진</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-Node-js/">React + Node.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/%EC%9B%B9/">웹</a></li></ul></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Test/">Test</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%82%AC%EC%A7%84/">사진</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-Node-js/">React + Node.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/%EC%9B%B9/">웹</a></li></ul></li></ul></li></ul>
     </div>
   </div>
 
@@ -908,6 +900,10 @@
       <ul>
         
           <li>
+            <a href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
+          </li>
+        
+          <li>
             <a href="/2020/09/10/%EC%82%AC%EC%A7%84/%ED%85%8C%EC%8A%A4%ED%8A%B8/">화질테스트</a>
           </li>
         
@@ -921,10 +917,6 @@
         
           <li>
             <a href="/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%992/">React x Express 연동하여 데이터 전송하기(2)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%99/">React x Express 연동하여 데이터 전송하기</a>
           </li>
         
       </ul>
