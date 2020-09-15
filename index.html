@@ -242,6 +242,49 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
 
 
   
+    <article id="post-쓰레기통/사진/테스트" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/10/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%82%AC%EC%A7%84/%ED%85%8C%EC%8A%A4%ED%8A%B8/" class="article-date">
+  <time datetime="2020-09-10T06:19:48.000Z" itemprop="datePublished">2020-09-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/">쓰레기통</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/10/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%82%AC%EC%A7%84/%ED%85%8C%EC%8A%A4%ED%8A%B8/">화질테스트</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>대만 화련 (업데이트했어요5)</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/10/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%82%AC%EC%A7%84/%ED%85%8C%EC%8A%A4%ED%8A%B8/" data-id="ckf3rmu990000pwv487kqbt0m" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-쓰레기통/웹/브라우저" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/09/09/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/" class="article-date">
@@ -852,92 +895,6 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
 
 
   
-    <article id="post-쓰레기통/고객관리예제 공부/project-10" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-10/" class="article-date">
-  <time datetime="2020-09-04T01:56:22.000Z" itemprop="datePublished">2020-09-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/">쓰레기통</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-10/">React와 Node.js로 만드는 고객 관리 시스템 개발-10</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="AWS-RDS-서비스를-이용한-DB-연동"><a href="#AWS-RDS-서비스를-이용한-DB-연동" class="headerlink" title="AWS RDS 서비스를 이용한  DB 연동"></a>AWS RDS 서비스를 이용한  DB 연동</h1><p>AWS RDS로 데이터 베이스 만들어 보자</p>
-<p><img src="/img/10RDS.png">    </p>
-<p><img src="/img/10RDS2.png">  </p>
-<p><img src="/img/10RDS3.png">  </p>
-<h2>MySQL Workbench</h2>
-
-<p>위에까지 하다가 오류가 발생해서 AWS 설정을 바꿨는데 이게 굉장히 오래 걸려서 중간에 잘려먹었다.  퍼블릭 액세스를 아니오 라고 설정했던 것이 원인이었는데 예로 변경하였더니 정상 작동하였다.</p>
-<p>Workbench와 연동하는 방법은 엔드포인트 주소를 호스트에 입력하고 데이터베이스를 생성할 때 설정했던 ID 와 비밀번호를 쳐서 연동하면 된다.</p>
-<p>연동이 되면 새로운 스키마를 작성하고 다음과 같이 고객 테이블을 구축하자.</p>
-<figure class="highlight sql"><figcaption><span>reactexample</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">USE</span> reactexample;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> CUSTOMER (</span><br><span class="line"></span><br><span class="line">	<span class="keyword">id</span> <span class="built_in">INT</span> PRIMARY <span class="keyword">KEY</span> AUTO_INCREMENT,</span><br><span class="line"></span><br><span class="line">	image <span class="built_in">VARCHAR</span>(<span class="number">1024</span>),</span><br><span class="line"></span><br><span class="line">	<span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">64</span>),</span><br><span class="line"></span><br><span class="line">	birthday <span class="built_in">VARCHAR</span>(<span class="number">64</span>),</span><br><span class="line"></span><br><span class="line">	gender <span class="built_in">VARCHAR</span>(<span class="number">64</span>),</span><br><span class="line"></span><br><span class="line">	job <span class="built_in">VARCHAR</span>(<span class="number">64</span>)</span><br><span class="line"></span><br><span class="line">) <span class="keyword">DEFAULT</span> <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8 <span class="keyword">COLLATE</span> utf8_general_ci;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> CUSTOMER <span class="keyword">VALUES</span> (</span><br><span class="line">	<span class="number">1</span>,</span><br><span class="line">    <span class="string">&#x27;https://placeimg.com/64/64/any&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;염소&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;031223&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;여자&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;대학생&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> CUSTOMER <span class="keyword">VALUES</span> (</span><br><span class="line">	<span class="number">2</span>,</span><br><span class="line">    <span class="string">&#x27;https://placeimg.com/64/64/2&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;최동욱&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;951211&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;남자&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;인턴&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> CUSTOMER <span class="keyword">VALUES</span> (</span><br><span class="line">	<span class="number">3</span>,</span><br><span class="line">    <span class="string">&#x27;https://placeimg.com/64/64/3CUSTOMER&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;털보&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;961127&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;남자&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;개&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p><strong>결과 화면</strong></p>
-<p><img src="/img/10%EA%B2%B0%EA%B3%BC.png">  </p>
-<h2>gitignore</h2>
-
-<p>데이터베이스 관련 정보가 깃허브에 올라가지 않도록 서버 쪽 <code>.gitignore</code> 파일을 수정하자</p>
-<figure class="highlight plain"><figcaption><span>.gitignore</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># database</span><br><span class="line">&#x2F;database.json</span><br></pre></td></tr></table></figure>
-
-<p>​    </p>
-<p>이후에 database.json 에서 데이터베이스 정보를 설정하면 된다</p>
-<figure class="highlight json"><figcaption><span>database.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;host&quot;</span>: 데이터베이스 주소,</span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;user&quot;</span>: 데이터베이스 사용자,</span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;password&quot;</span>: 데이터베이스 비밀번호,</span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;port&quot;</span>: <span class="string">&quot;3306&quot;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;database&quot;</span>: 데이터베이스 이름</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2>Node.js와 MySQL 연동하기</h2>
-
-<p>먼저 NPM을 통해서 MySQL 라이브러리를 설치하자.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -S mysql</span><br></pre></td></tr></table></figure>
-
-
-
-<p>설치된 MySQL 라이브러리를 활용해서 연동이 가능하다.</p>
-<figure class="highlight javascript"><figcaption><span>server.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="keyword">const</span> port = process.env.PORT || <span class="number">5000</span>;</span><br><span class="line">app.use(bodyParser.json());</span><br><span class="line">app.use(bodyParser.urlencoded(&#123;<span class="attr">extended</span>: <span class="literal">true</span>&#125;));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> data = fs.readFileSync(<span class="string">&#x27;./database.json&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> conf = <span class="built_in">JSON</span>.parse(data);</span><br><span class="line"><span class="keyword">const</span> mysql = <span class="built_in">require</span>(<span class="string">&#x27;mysql&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> connection = mysql.createConnection(&#123;</span><br><span class="line">  host : conf.host,</span><br><span class="line">  user : conf.user,</span><br><span class="line">  password: conf.password,</span><br><span class="line">  port : conf.port,</span><br><span class="line">  database: conf.database</span><br><span class="line">&#125;);</span><br><span class="line">connection.connect();</span><br><span class="line">app.get(<span class="string">&#x27;/api/customers/&#x27;</span>, <span class="function">(<span class="params">req,res</span>) =&gt;</span>&#123;</span><br><span class="line">  connection.query(</span><br><span class="line">    <span class="string">&#x27;SELECT * FROM CUSTOMER&#x27;</span>,</span><br><span class="line">    (err , rows, fields) =&gt; &#123;</span><br><span class="line">      res.send(rows);</span><br><span class="line">    &#125;</span><br><span class="line">  )</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(port, <span class="function">() =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`Listening on port <span class="subst">$&#123;port&#125;</span>`</span>));</span><br></pre></td></tr></table></figure>
-
-
-<blockquote>
-<p>CORS 라는 것도 있는데 도메인 또는 포트가 다른 서버의 자원을 요청하는 매커니즘이다. 서버를 8000번 포트 , REACT를 3000번 포트에서 실행하면 발생하거나 , 이미지를 저장하는 서버와 접속하는 서버가 다른 경우이다.</p>
-</blockquote>
-<p><strong>결과 화면</strong></p>
-<p><img src="/img/10%EA%B2%B0%EA%B3%BC2.png"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-10/" data-id="ckf3rkxfm0008ukv445kzgiks" class="article-share-link">공유</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -989,15 +946,15 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
           </li>
         
           <li>
+            <a href="/2020/09/10/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%82%AC%EC%A7%84/%ED%85%8C%EC%8A%A4%ED%8A%B8/">화질테스트</a>
+          </li>
+        
+          <li>
             <a href="/2020/09/09/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/">브라우저는 어떻게 작동하는가??</a>
           </li>
         
           <li>
             <a href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%993/">React x Express 연동하여 데이터 전송하기(3)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%992/">React x Express 연동하여 데이터 전송하기(2)</a>
           </li>
         
       </ul>
