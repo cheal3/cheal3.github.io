@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Choi Dong Wook blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Choi Dong Wook blog">
+<meta property="og:url" content="http://cheal3.github.io/page/3/index.html">
+<meta property="og:site_name" content="Choi Dong Wook blog">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:author" content="cheal3@naver.com">
+<meta property="article:tag" content="IT">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Choi Dong Wook blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Choi Dong Wook blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="검색"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cheal3.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-고객관리예제 공부/project-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/02/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-1/" class="article-date">
+  <time datetime="2020-09-02T08:02:32.000Z" itemprop="datePublished">2020-09-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/React-Node-js/">React + Node.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/02/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-1/">React와 Node.js로 만드는 고객 관리 시스템 개발</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Create-React-App으로-리액트-프로젝트-시작하기"><a href="#Create-React-App으로-리액트-프로젝트-시작하기" class="headerlink" title="Create React App으로 리액트 프로젝트 시작하기"></a>Create React App으로 리액트 프로젝트 시작하기</h1> <h4>Node.js를 설치하면 패키지 매니저 도구 npm이 자동으로 설치된다.</h4>
+
+
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br></pre></td></tr></table></figure>
+
+
+
+<p>프로젝트 폴더로 이동해서 React 프로젝트를 생성해 주고 해당 프로젝트 폴더로 이동하자.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create-react-app react_example</span><br><span class="line">cd react_example</span><br></pre></td></tr></table></figure>
+
+<p>yarn start를 실행하라고 하였는데 오류가 나서 yarn을 다시 설치해 주었다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install yarn -g</span><br><span class="line">yarn start</span><br></pre></td></tr></table></figure>
+
+
+
+<p>기본 포트번호 <code>localhost:3000</code>  로 접속하면 다음과 같은 화면이 나온다</p>
+<p><img src="/img/React.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/02/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-1/" data-id="ckf3cla840005l4v456hzfuyj" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-초창기 막공부/2일차 React_2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8%20React_2/" class="article-date">
+  <time datetime="2020-09-02T06:21:14.000Z" itemprop="datePublished">2020-09-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8%20React_2/">막공부</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="엘리먼트-렌더링"><a href="#엘리먼트-렌더링" class="headerlink" title="엘리먼트 렌더링"></a><strong>엘리먼트 렌더링</strong></h1> <h4>엘리먼트는 React 앱의 가장 작은 단위이다.</h4>
+
+<p>엘리먼트는 화면에 표시할 내용을 기술한다.</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>  브라우저 DOM 엘리먼트와 달리 React 엘리먼트는 일반 객체이며(plain object) 쉽게 생성할 수 있다. React DOM은 React 엘리먼트와 일치하도록 DOM을 업데이트 한다.</p>
+<blockquote>
+<p><strong>주의</strong></p>
+<p>더 널리 알려진 개념인 “컴포넌트”와 엘리먼트를 혼동할 수 있다.</p>
+</blockquote>
+<h3 id="DOM에-엘리먼트-렌더링하기"><a href="#DOM에-엘리먼트-렌더링하기" class="headerlink" title="DOM에 엘리먼트 렌더링하기"></a><strong>DOM에 엘리먼트 렌더링하기</strong></h3><hr>
+
+<p>HTML 파일 어딘가에 <code>&lt;div&gt;</code>가 있다고 가정해 보자.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id = <span class="string">&quot;root&quot;</span>&gt; &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>  이 안에 들어가는 모든 엘리먼트를 React DOM에서 관리하기 때문에 이것을 “루트” DOM 노드라고 부른다.</p>
+<p>React로 구현된 애플리케이션은 일반적으로 하나의 루트 DOM 노드가 있다. React를 기존 앱에 통합하려는 경우 원하는 만큼 많은 수의 독립된 루트 DOM 노드가 있을 수 있다.</p>
+<p>React 엘리먼트를 루트 DOM 노드에 렌더링하려면 둘 다 <code>ReactDOM.render()</code>로 전달하면 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">ReactDOM.render(element,<span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://ko.reactjs.org/redirect-to-codepen/rendering-elements/render-an-element">CodePen에서 실행하기</a></p>
+<p>위 코드를 실행하면 화면에 “Hello, World!” 가 보인다.</p>
+<h2><strong>렌더링 된 엘리먼트 업데이트하기</strong></h2>
+<hr>
+
+<p>React 엘리먼트는 불변객체 이다. 엘리먼트를 생성한 이후에는 해당 엘리먼트의 자식이나 속성을 변경할 수 없다. 엘리먼트는 영화에서 하나의 프레임과 같이 특정 시점의 UI를 보여준다.</p>
+<p>지금까지 소개한 내용을 바탕으로 하면 UI를 업데이트하는 유일한 방법은 새로운 엘리먼트를 생성하고 이를 <code>ReactDOM.render()</code>로 전달하는 것이다.</p>
+<p>예시로 똑딱거리는 시계를 살펴보자.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> element = (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Hello, world!&lt;/h1&gt;</span><br><span class="line">      &lt;h2&gt;It is &#123;<span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString()&#125;.&lt;/h2&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">  ReactDOM.render(element, <span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">setInterval</span>(tick, <span class="number">1000</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://ko.reactjs.org/redirect-to-codepen/rendering-elements/update-rendered-element">CodePen에서 실행하기</a></p>
+<p>위 함수는 <code>setInterval()</code> 콜백을 이용해 매 초마다 <code>ReactDOM.render()</code>를 호출합니다.</p>
+<blockquote>
+<p>주의<br>실제로 대부분의 React 앱은 <code>ReactDOM.render()</code>를 한 번만 호출합니다.</p>
+</blockquote>
+<h2><strong>변경된 부분만 업데이트하기</strong></h2>
+<hr>
+
+<p>React DOM은 해당 엘리먼트와 그 자식 엘리먼트를 이전의 엘리먼트와 비교하고 DOM을 원하는 상태로 만드는데 필요한 경우에만 DOM을 업데이트한다.</p>
+<p>개발자 도구를 이용해 마지막 예시를 살펴보면 이를 확인할 수 있다.</p>
+<p><img src="https://ko.reactjs.org/c158617ed7cc0eac8f58330e49e48224/granular-dom-updates.gif" alt="DOM inspector showing granular updates"></p>
+<p>매초 전체 UI를 다시 그리도록 엘리먼트를 만들었지만 React DOM은 내용이 변경된 텍스트 노드만 업데이트했다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8%20React_2/" data-id="ckf3cla9f001yl4v4ejycewzp" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-초창기 막공부/2일차 React_1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8%20React_1/" class="article-date">
+  <time datetime="2020-09-02T04:45:43.000Z" itemprop="datePublished">2020-09-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8%20React_1/">2일차) React.js</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Hello-World"><a href="#1-Hello-World" class="headerlink" title="1. Hello World"></a><strong>1. Hello World</strong></h1> <h4>가장 단순한 React 예시는 다음과 같이 생겼다.</h4>
+
+
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;h1&gt;Hello, World!&lt;/h1&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p> 위 코드는 페이지에 “Hello, world!”라는 제목을 보여준다.</p>
+<p> <a target="_blank" rel="noopener" href="https://ko.reactjs.org/redirect-to-codepen/hello-world">CodePen에서 실행하기</a>  </p>
+<h1 id="2-JSX"><a href="#2-JSX" class="headerlink" title="2. JSX"></a><strong>2. JSX</strong></h1> <h4>아래의 변수 선언을 살펴보자</h4>
+
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>   위와 같은 태그 문법을 JSX라고 하며 JavaScript를 확장한 문법이다.<br>   JSX는 React element를 생성한다.  </p>
+<h2><strong>JSX에 표현식 표함하기</strong></h2>
+<hr>
+  아래 예시에서는 `name` 이라는 변수를 선언한 후 중괄호로 감싸 JSX 안에 사용하였다.
+
+
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">&#x27;dong wook&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello , &#123;name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  element,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>  JSX의 중괄호 안에는 유효한 모든 JavaScript표현식을 넣을 수 있다. 예를 들어 <code>2+2</code>  ,  <code>user.firstName</code> 또는 <code>formatName(user)</code> 등은 모두 유효한 JavaScript 표현식이다.</p>
+<p>  아래 예시에서는 JavaScript 함수 호출의 결과인 <code>formatName(user)</code>을 <code>&lt;h1&gt;</code> 엘리멘트에 포함했다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatName</span>(<span class="params">user</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> user.firstName + <span class="string">&#x27; &#x27;</span> + user.lastName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> user = &#123;</span><br><span class="line">  firstName: <span class="string">&quot;dong wook&quot;</span>,</span><br><span class="line">  lastName: <span class="string">&#x27;choi&#x27;</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> element = (</span><br><span class="line">  &lt;h1&gt;</span><br><span class="line">  Hello, &#123;formatName(user)&#125;!</span><br><span class="line">  &lt;/h1&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  element,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>)</span><br><span class="line">);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p><a target="_blank" rel="noopener" href="https://ko.reactjs.org/redirect-to-codepen/introducing-jsx">CodePen에서 실행하기</a>  </p>
+<h2><strong>JSX도 표현식이다</strong></h2>
+<hr>
+
+<p>컴파일이 끝나면, JSX 표현식이 정규 JavaScript 함수 호출이 되고 JavaScript 객체로 인식된다.<br>즉, JSX를 <code>if</code> 구문 및 <code>for</code> loop 안에 사용하고, 변수에 할당하고 , 인자로서 받아들이고, 함수로부터 반환 할 수 있다.   </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getGreeting</span>(<span class="params">user</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(user)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello , &#123;formatName(user)&#125;!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, Stranger. <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2><strong>JSX 속성 정의</strong></h2>
+<hr>
+
+
+<p>속성에 따옴표를 이용해 문자열 리터럴을 정의할 수 있다.  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">tabIndex</span>=<span class="string">&quot;0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>중괄호를 사용하여 어트리뷰트에 JavaScript표현식을 삽입할 수도 있다.  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#123;user.avatarUrl&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">img</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>어트리뷰트에 JavaScript 표현식을 삽입할 때 중괄호 주변에 따옴표를 입력하지 말자.<br>따옴표 또는 중괄호 중 하나만 사용하고 , 동일한 어트리뷰트에 두 가지를 동시에 사용하면 안된다.  </p>
+<blockquote>
+<p><strong> 경고 </strong><br>JSX는 HTML보다는 JavaScript에 가깝기 때문에, React DOM은 HTML 어트리뷰트 이름 대신 camelCase 프로퍼티 명명 규칙을 사용한다.<br>예를 들어 , JSX에서 class는 <code>className</code> 이 되고 tabindex는 <code>tabIndex</code> 가 된다.</p>
+</blockquote>
+<h2><strong>JSX로 자식 정의</strong></h2>
+<hr>  
+태그가 비어있다면 XML처럼 `/>` 를 이용해 바로 닫아주어야 한다.  
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#123;user.avatarUrl&#125;</span> /&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p> JSX 태그는 자식을 포함할 수 있다.  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;h1&gt;Hello!&lt;/h1&gt;</span><br><span class="line">    &lt;h2&gt;Good to see you here.&lt;/h2&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2><strong>JSX는 주입 공격을 방지한다</strong></h2>
+<hr>   
+JSX에 사용자 입력을 삽입하는 것은 안전하다.  
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> title = response.potentiallyMaliciousInput;</span><br><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;title&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p> 기본적으로 React DOM은 JSX에 삽입된 모든 값을 렌더링하기 전에 이스케이프 하므로, 애플리케이션에서<br> 명시적으로 작성되지 않은 내용은 주입되지 않는다. 모든 항목은 렌더링 되기 전에 문자열로 반환된다.<br> 이런 특성으로 인해 XSS 공격을 방지할 수 있다.  </p>
+ <h2><strong>JSX는 객체를 표현한다.</strong></h2>
+ <hr>  
+  Babel은 JSX를 `React.createElement()` 호출로 컴파일한다.  
+  다음 두 예시는 동일하다.  
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = (</span><br><span class="line">  &lt;h1 className = <span class="string">&quot;greeting&quot;</span>&gt;</span><br><span class="line">  Hello, World!</span><br><span class="line">  &lt;/h1&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = React createElement(</span><br><span class="line">  <span class="string">&#x27;h1&#x27;</span>,</span><br><span class="line">  &#123;<span class="attr">className</span>: <span class="string">&#x27;greeting&#x27;</span>&#125;,</span><br><span class="line">  <span class="string">&#x27;Hello, World!&#x27;</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>React.createElement()</code> 는 버그가 없는 코드를 작성하는 데 도움이 되도록 몇 가지 검사를 수행하며, 기본적으로 다음과 같은 객체를 생성한다.  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 주의: 다음 구조는 단순화되었음</span></span><br><span class="line"><span class="keyword">const</span> element = &#123;</span><br><span class="line">  type: <span class="string">&#x27;h1&#x27;</span>,</span><br><span class="line">  props: &#123;</span><br><span class="line">    className: <span class="string">&#x27;greeting&#x27;</span>,</span><br><span class="line">    children: <span class="string">&#x27;Hello, world!&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p> 이러한 객체를 “React 엘리먼트”라고 하며, 이를 화면에 표시하려는 항목에 대한 설명이라고 생각할 수 있다.<br> React는 이러한 객체를 읽은 후 DOM을 구성하고 최신으로 유지하는 데 이러한 객체를 사용한다.  </p>
+<blockquote>
+<p><strong> 팁 </strong><br>ES6 및 JSX 코드가 올바르게 표시되도록 편집기에 “Babel” 언어 설정을 사용하는 것을 권장.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8%20React_1/" data-id="ckf3cla9e001wl4v49qb43as3" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-초창기 막공부/2일차" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8/" class="article-date">
+  <time datetime="2020-09-02T00:56:48.000Z" itemprop="datePublished">2020-09-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/JS/">JS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8/">Node.js</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><p>Node.js는 Google의 V8 JavaScript 엔진에 기반한 서버 측 기술이다. 쓰레드나 별도 프로세스 대신 비동기 이벤트 위주 I/O를 사용하는 시스템으로 간단한 작업을 수행하지만 접근 빈도가 높은 웹 어플리케이션에 이상적이다.</p>
+<table>
+<thead>
+<tr>
+<th>전통적인 웹 서버</th>
+<th align="center">Node</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>웹 리소스가 요청될 때마다 요청을 처리하기 위해 매번 별도의 스레드를 생성하거나 새로운 프로세스를 호출한다. 이러한 방식은 많은 양의 리소스를 붙잡아 두게 된다.</code></td>
+<td align="center"><strong>매 요청마다 태스크를 새롭게 생성하지 않고 특정 이벤트를 기다리고 있다가 해당 이벤트가 발생하면 응답한다. Node는 이벤트 기능이 완료되는 것을 기다리는 동안 다른 요청이 들어오는 것을 차단하지 않으며 이벤트는 비교적 간단한 이벤트 루프 내에서 들어온 순서대로 처리된다.</strong></td>
+</tr>
+</tbody></table>
+<h2><strong> Hello World! </strong></h2>
+<hr>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//helloworld.js</span></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>); <span class="comment">// 1</span></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>)</span>&#123; <span class="comment">// 2</span></span><br><span class="line">  res.writeHead(<span class="number">200</span>,&#123;<span class="string">&#x27;content-type&#x27;</span>: <span class="string">&#x27;text/plain&#x27;</span>&#125;); <span class="comment">// 3</span></span><br><span class="line">  res.end(<span class="string">&quot;Hello, World!\n&quot;</span>); <span class="comment">//4</span></span><br><span class="line">&#125;).listen(<span class="number">8124</span>); <span class="comment">// asynchronous</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;Server running on 8124&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>다음과 같이 코드를 작성하고 명령 창에서 다음을 입력한다.<br><br></p>
+<pre><code> node helloworld.js </code></pre>
+<br>
+프로그램이 성공적으로 실행되면 다음과 같이 출력된다.  
+<br>
+<pre><code> Server running on 8124 </code></pre>
+<br>
+그 다음 아무 브라우저나 사용해서 `localhost:8124`를 사용하면 아래와 같은 웹 페이지가 표시된다.  
+
+<p><img src="/img/helloworld.png">    </p>
+<p>helloworld.js 의 코드를 살펴보면  </p>
+<ol>
+<li>Node의 기능 대부분은 모듈이라고 불리는 외부 어플리케이션 및 라이브러리를 통해 제공된다. 1의 코드는 HTTP 모듈을 로드해서 로컬 변수 http에 할당한다. HTTP 모듈은 기본 HTTP 기능을 제공하여 어플리케이션이 네트워크에 접근할 수 있게 해준다.  </li>
+<li><code>createServer</code>를 사용하여 새로운 서버가 생성되며, 매개변수로 익명 함수가 전달된다. 이 익명 함수는 requestListener 함수로 서버 요청(http.ServerRequest)과 서버 응답(http.ServerResponse)이라는 매개변수들을 가진다.    </li>
+<li>http.ServerResponse 개체는 <code>writeHead</code>라는 메소드를 가지는데 응답 상태와 content-type을 제공하는 응답 헤더를 전송하고 있다.  </li>
+<li>헤더 생성 코드 다음은 메시지를 쓰는 명령이다. <code>end</code> 메소드는 두 개의 매개변수를 가진다.<ul>
+<li>문자열이나 버퍼가 될 수 있는 데이터</li>
+<li>문자열일 경우 인코딩 방식을 지정 (utf-8이 아닐 경우에만 필요)  </li>
+</ul>
+</li>
+</ol>
+<p>또한 4의 코드는 다음과 같이 쓸 수도 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res.write(<span class="string">&quot;Hello, World!\n&quot;</span>);</span><br><span class="line">res.end();</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8/" data-id="ckf3cla9h0021l4v440nc7m4k" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-초창기 막공부/1일차-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/01/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/1%EC%9D%BC%EC%B0%A8-3/" class="article-date">
+  <time datetime="2020-09-01T05:30:00.000Z" itemprop="datePublished">2020-09-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/JS/">JS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/01/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/1%EC%9D%BC%EC%B0%A8-3/">1일차</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="this"><a href="#this" class="headerlink" title="this"></a>this</h1><h2><strong>this 란? </strong></h2>
+<hr>
+JS는 스크립트 언어로 인터프리터가 코드를 라인 단위로 읽고 해석한 뒤 실행시킨다.
+인터프리터에 의해 현재 실행되는 자바스크립트 코드의 scope를 실행 컨텐스트라고 부른다.
+JS에서는 이런 실행 컨텍스트를 stack으로 관리하고 있으며 <strong>this는 현재 실행되는 코드의 실행 컨텍스트를 가리킨다.</strong>
+이는 일반적으로 메소드를 호출한 객체가 저장되어 있는 속성이다.
+기본적으로 this는 전역 객체를 가리키는데 Node환경에서는 global , Browser에서는 Window를 가리킨다.
+
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyClass</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.property1 = <span class="string">&quot;value1&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MyClass.prototype.method1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">this</span>.property1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> my1 = <span class="keyword">new</span> MyClass();</span><br><span class="line">my1.method1();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>메소드를 호출한 객체는 my1이고 method1은 메소드가 된다. method1()이 실행되면 메소드 내부에는 자바스크립트 엔진에 의해 this 속성이 생기게 된다. 이 this에는 method1을 호출한 my1 객체가 저장된다.</p>
+<h2><strong>1. 일반 함수에서의 this </strong></h2>
+<hr>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = <span class="number">10</span>;  <span class="comment">//1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.data = <span class="number">20</span>; <span class="comment">//2</span></span><br><span class="line">  data = <span class="number">30</span>;    <span class="comment">//3</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;1. data = &quot;</span> + data);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;2. this.data = &quot;</span> + <span class="built_in">this</span>.data);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;3. window.data = &quot;</span> + <span class="built_in">window</span>.data);</span><br><span class="line">&#125;</span><br><span class="line">outer();</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. data = 30</span></span><br><span class="line"><span class="comment">2. this.data = 30</span></span><br><span class="line"><span class="comment">3. window.data = 30</span></span><br><span class="line"><span class="comment">*/</span>  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>일반 함수 내부에서는 this 가 전역 객체인 window 객체를 저장한다.<br>2의 data는 window.data 와 동일하기 때문에 1의 data에 20이 저장된다.<br>3에서는 먼저 지역 변수 내에서 data를 찾고 없으면 outer를 호출한 영역에서 찾기 때문에 마찬가지로 전역변수인 data에 30을 저장한다<br>=&gt; 1,2,3의 data 모두 전역 변수인 data(1의 data)를 나타낸다.</p>
+<h2><strong>2. 중첩 함수에서의 this </strong></h2>
+<hr>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = <span class="number">10</span>;  <span class="comment">//1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.data = <span class="number">20</span>; <span class="comment">//2</span></span><br><span class="line">    data = <span class="number">30</span>;    <span class="comment">//3</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;1. data = &quot;</span> + data);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;2. this.data = &quot;</span> + <span class="built_in">this</span>.data);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;3. window.data = &quot;</span> + <span class="built_in">window</span>.data);</span><br><span class="line">  &#125;</span><br><span class="line">  inner();</span><br><span class="line">&#125;</span><br><span class="line">outer();</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. data = 30</span></span><br><span class="line"><span class="comment">2. this.data = 30</span></span><br><span class="line"><span class="comment">3. window.data = 30</span></span><br><span class="line"><span class="comment">*/</span>  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>일반 중첩 함수에서 this 역시 window가 된다.<br>2의 this.data는 1의 data와 동일하므로 1의 data에 20이 저장된다.<br>3의 data는 우선 지역 변수 내에서 data를 찾고, 없다면 outer를 호출한 영역에서 data를 찾습니다. inner와 outer 모두 data가 없기 때문에, 3의 data 역시 1의 전역 변수인 data가 된다.<br>=&gt; 1,2,3의 data 모두 전역 변수인 data(1의 data)를 나타낸다.</p>
+<h2><strong>3. Event Listener에서의 this </strong></h2>
+<hr>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = <span class="number">10</span>;  <span class="comment">//1</span></span><br><span class="line">$(<span class="string">&quot;#myButton&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.data = <span class="number">20</span>; <span class="comment">//2</span></span><br><span class="line">    data = <span class="number">30</span>;    <span class="comment">//3</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;1. data = &quot;</span> + data);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;2. this.data = &quot;</span> + <span class="built_in">this</span>.data);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;3. window.data = &quot;</span> + <span class="built_in">window</span>.data);</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. data = 30</span></span><br><span class="line"><span class="comment">2. this.data = 20</span></span><br><span class="line"><span class="comment">3. window.data = 30</span></span><br><span class="line"><span class="comment">*/</span>  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>이벤트 리스너에서는 this가 이벤트를 발생시킨 객체가 된다.<br>그러므로 this가 #myButton이 되고 2는 #myButton에 data라는 property를 동적으로 추가하는 구문이 된다.<br>3의 data는 우선 지역 변수내에서 data를 찾고 없다면 상위 영역에서 data를 찾는다. 결국 3의 data는 1의 전역 변수 data가 되어 30을 저장한다</p>
+<h2><strong>4. 메소드에서의 this </strong></h2>
+<hr>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = <span class="number">10</span>;  <span class="comment">//1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyClass</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.data = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">MyClass.prototype.method1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">    <span class="built_in">this</span>.data = <span class="number">20</span>; <span class="comment">//2</span></span><br><span class="line">    data = <span class="number">30</span>;    <span class="comment">//3</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;1. data = &quot;</span> + data);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;2. this.data = &quot;</span> + <span class="built_in">this</span>.data);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;3. window.data = &quot;</span> + <span class="built_in">window</span>.data);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> my1 = <span class="keyword">new</span> MyClass();</span><br><span class="line">  my1.method1();</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. data = 30</span></span><br><span class="line"><span class="comment">2. this.data = 20</span></span><br><span class="line"><span class="comment">3. window.data = 30</span></span><br><span class="line"><span class="comment">*/</span>  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>(객체의 property가 함수인 경우 이를 메소드라고 부른다)<br>메소드에서는 this가 메소드를 호출한 객체가 된다.<br>2의 data는 객체의 property가 되어 코드 my1.data에 20이 저장된다.<br>3의 data는 우선 지역 변수 내에서 data를 찾고, 없으면 상위 영역에서 data를 찾게 됩니다. 결국 3의 data는 1의 전역 변수 data가 되어 30을 저장한다.</p>
+<h2><strong>5. 메소드 내부의 중첩 함수에서의 this </strong></h2>
+<hr>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = <span class="number">10</span>;  <span class="comment">//1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyClass</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.data = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">MyClass.prototype.method1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">this</span>.data = <span class="number">20</span>; <span class="comment">//2</span></span><br><span class="line">      data = <span class="number">30</span>;    <span class="comment">//3</span></span><br><span class="line"></span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&quot;1. data = &quot;</span> + data);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&quot;2. this.data = &quot;</span> + <span class="built_in">this</span>.data);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&quot;3. window.data = &quot;</span> + <span class="built_in">window</span>.data);</span><br><span class="line">  &#125;</span><br><span class="line">  inner();</span><br><span class="line">&#125;</span><br><span class="line">  <span class="keyword">var</span> my1 = <span class="keyword">new</span> MyClass();</span><br><span class="line">  my1.method1();</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. data = 30</span></span><br><span class="line"><span class="comment">2. this.data = 20</span></span><br><span class="line"><span class="comment">3. window.data = 30</span></span><br><span class="line"><span class="comment">*/</span>  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>객체의 메소드 내부에서 만들어지는 중첩 함수에서 this는 객체가 아닌 window가 된다.<br>2의 data는 1의 전역 변수가 되어 1의 data에 20이 저장된다.<br>3의 data는 우선 지역 변수 내에서 data를 찾고, 없으면 상위 영역에서 data를 찾게 됩니다. 결국 3의 data는 1의 전역 변수 data가 되어 30을 저장한다.<br>=&gt; 1,2,3의 data 모두 전역 변수인 data(1의 data)를 나타낸다.</p>
+<h2><strong> 요약 </strong></h2>
+<hr>
+
+
+<table>
+<thead>
+<tr>
+<th>this가 만들어지는 경우</th>
+<th align="center">this가 가리키는 것</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>일반 함수</code></td>
+<td align="center"><strong>window</strong></td>
+</tr>
+<tr>
+<td><code>중첩 함수</code></td>
+<td align="center"><strong>window</strong></td>
+</tr>
+<tr>
+<td><code>이벤트</code></td>
+<td align="center"><strong>이벤트 객체</strong></td>
+</tr>
+<tr>
+<td><code>메소드</code></td>
+<td align="center"><strong>메소드 객체</strong></td>
+</tr>
+<tr>
+<td><code>메소드 내부 중첩 함수</code></td>
+<td align="center"><strong>window</strong></td>
+</tr>
+</tbody></table>
+<p>출처 : <a target="_blank" rel="noopener" href="https://beomy.tistory.com/6">https://beomy.tistory.com/6</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/01/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/1%EC%9D%BC%EC%B0%A8-3/" data-id="ckf3cla98001rl4v44e4o1c2f" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-초창기 막공부/1일차" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/01/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/1%EC%9D%BC%EC%B0%A8/" class="article-date">
+  <time datetime="2020-09-01T05:30:00.000Z" itemprop="datePublished">2020-09-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/JS/">JS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/01/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/1%EC%9D%BC%EC%B0%A8/">1일차</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JS-문법-공부-ES-6"><a href="#JS-문법-공부-ES-6" class="headerlink" title="JS 문법 공부(ES 6)"></a>JS 문법 공부(ES 6)</h1><p>인턴 1일차 JS문법공부 (ES 6) 하고 난 뒤에 node.js  / React.js / db 설계 공부예정</p>
+<h2><strong> ES 6 </strong></h2>
+<hr>
+
+<p>사수님께서 ES6를 공부하라고 하셔서 ES6가 뭐고 왜 쓰는지 먼저 알아 보았다.<br>초기에는 특정 브라우저에서만 동작하는 JS가 있어서  모든 브라우저에서 호환이 되는<br>표준 규격을 만들었고 그것이 ECMA 국제기구에서 만든 ECMA Script이다.<br>그리고 회사에서 사용하는 React 등 최신 프레임워크들은 ES6를 기반으로 하고 있기 때문에<br>ES6를 공부하게 된 것이다.<br><br></p>
+<p>추가적으로 유튜브에서 공부할 때 보았던 Babel이라는 트랜스파일러를 사용하는 이유도 알 수 있었는데<br>웹 브라우저에서 완벽하게 지원되지 않아서 상위버전 ES를 하위버전 ES로 변환해 주는 역할을 한다고 한다.</p>
+<br>
+ES6에서 대표적으로 추가된 기능은 3가지 정도가 있다.
+
+<h3><strong>1. Var와 Let , Const </strong></h3>
+<hr>
+일단 세가지 키워드 모두 선언 방법은 동일하다.
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> v1 = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">let</span> v2 = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">const</span> v3 = <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
+
+<p>ES6에서는 var 대신 let과 const를 쓴다고 하는데 이들의 차이점을 알아보았다.</p>
+<br>
+
+<h4><strong>1.1 호이스팅 (Hoisting)</strong></h4>
+<hr>
+var로 선언한 변수는 호이스팅이 된다는 특징이 있다.
+호이스팅이란 끌어올린다는 뜻으로 변수의 선언보다 대입이 먼저 이루어질 때 일어난다
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hoisting = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> hoisting;</span><br><span class="line"><span class="built_in">console</span>.log(hoisting); <span class="comment">//  1</span></span><br></pre></td></tr></table></figure>
+<br>
+하지만 let과 const는 호이스팅을 시도할 경우 에러가 난다.
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hoisting = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> hoisting;</span><br><span class="line"><span class="built_in">console</span>.log(hoisting);</span><br><span class="line"> <span class="comment">// error</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hoisting = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> hoisting;</span><br><span class="line"><span class="built_in">console</span>.log(hoisting);  </span><br><span class="line"><span class="comment">// error</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<h4><strong>1.2 변수 스코프</strong></h4>
+<hr>
+var는 함수 스코프만 적용되고 블록 스코프는 적용되지 않는다.
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//함수 스코프</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">200</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// 200</span></span><br><span class="line">&#125;</span><br><span class="line">f();</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//100</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//블록 스코프</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">if</span>(a&gt;<span class="number">0</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> a =<span class="number">200</span>;</span><br><span class="line">  <span class="comment">/*var a = 300; // error가 발생하지 않는다 */</span></span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">//200</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//200</span></span><br></pre></td></tr></table></figure>
+<p>블록 스코프 예제에서 두번째 콘솔에 찍힌 a값이 200인 이유는 var변수 사용시 함수 블록에 대한 스코프만 제공하기 때문에 변수가 블록 안에 있던 밖에 있던 공유되기 때문이다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">if</span>(a&gt;<span class="number">0</span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">200</span>;</span><br><span class="line">  <span class="comment">/*let a = 100;   // error ( a  = 100; 은 가능하다.)*/</span></span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// 200</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//100</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">if</span>(a&gt;<span class="number">0</span>)&#123;</span><br><span class="line">  <span class="keyword">const</span> a = <span class="number">200</span>;</span><br><span class="line">  <span class="comment">/*const a = 100;   // error ( a  = 100; 도 불가능하다.)*/</span></span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// 200</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//100</span></span><br></pre></td></tr></table></figure>
+<p>let 과 const는 모든 블록에 대한 스코프가 생기고 중복 선언이 불가능하다.</p>
+<h3><strong>2. 화살표 함수(Arrow Function) </strong></h3>
+<hr>
+ES6에서는 화살표 함수를 이용해 함수를 정의하는 방법이 추가되었다.
+일반적인 JS의 함수 선언 방법은 다음과 같다
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FunctionName</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+그리고 이렇게 선언된 함수는 다음과 같이 실행할 수 있다
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FunctionName();</span><br></pre></td></tr></table></figure>
+<br>
+<h4><strong>2.1 사용법</strong></h4>
+<hr>
+화살표 함수는 보다 간편한 방법으로 선언하기 위해 다음과 같이 선언한다.
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">() =&gt; &#123; ... &#125; <span class="comment">// 매개변수가 없을 경우</span></span><br><span class="line">     x =&gt; &#123; ... &#125; <span class="comment">// 매개변수가 한 개인 경우, 소괄호를 생략할 수 있다.</span></span><br><span class="line">(x, y) =&gt; &#123; ... &#125; <span class="comment">// 매개변수가 여러 개인 경우, 소괄호를 생략할 수 없다.</span></span><br><span class="line"></span><br><span class="line">x =&gt; &#123; <span class="keyword">return</span> x * x &#125;  <span class="comment">// single line block</span></span><br><span class="line">x =&gt; x * x             <span class="comment">// 함수 몸체가 한줄의 구문이라면 중괄호를 생략할 수 있으며 암묵적으로 return된다. 위 표현과 동일하다.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">() =&gt; &#123; <span class="keyword">return</span> &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;; &#125;</span><br><span class="line">() =&gt; (&#123; <span class="attr">a</span>: <span class="number">1</span> &#125;)  <span class="comment">// 위 표현과 동일하다. 객체 반환시 소괄호를 사용한다.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">() =&gt; &#123;           <span class="comment">// multi line block.</span></span><br><span class="line">  <span class="keyword">const</span> x = <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>화살표 함수는 익명 함수로만 사용할 수 있다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pow = <span class="function"><span class="params">x</span> =&gt;</span> x*x;</span><br><span class="line"><span class="built_in">console</span>.log(pow(<span class="number">10</span>)); <span class="comment">//100</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<h4><strong>2.2 this</strong></h4>
+<hr>
+일반 함수와 화살표 함수의 가장 큰 차이점은 this이다.
+일반 함수의 경우 함수를 호출할 때 어떻게 호출되었는지에 따라 this에 바인딩할 객체가 동적으로 결정된다.
+하지만 화살표 함수의 this는 언제나 상위 스코프의 this를 가리킨다. (Lexical this)
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Prepixer</span>(<span class="params">prefix</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.prefix = prefix;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Prefixer.prototype.prefixArray = <span class="function"><span class="keyword">function</span> (<span class="params">arr</span>)</span>&#123;</span><br><span class="line">  <span class="comment">// this는 상위 스코프인 prefixArray 메소드 내의 this를 가리킨다.</span></span><br><span class="line">  <span class="keyword">return</span> arr.map(<span class="function"><span class="params">x</span> =&gt;</span> <span class="string">`<span class="subst">$&#123;<span class="built_in">this</span>.prefix&#125;</span> #&#123;x&#125;`</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> pre = <span class="keyword">new</span> Prefixer(<span class="string">&#x27;Hi&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(pre.prefixArray([<span class="string">&#x27;Lee&#x27;</span>, <span class="string">&#x27;Kim&#x27;</span>]));</span><br></pre></td></tr></table></figure>
+화살표 함수는 call,apply,bind 메소드를 사용하여 this를 변경할 수 없다.
+
+
+<h3><strong>3. Promise </strong></h3>
+<hr>
+
+<p>싱글스레드인 자바스크립트에서 비동기 처리를 위해서 콜백을 사용해왔다.<br>덕분에 비동기 처리를 온전히 해낼 수 있었지만 여러가지 단점들이 있었는데<br>비동기 처리를 중첩시켜서 표현하므로 에러, 예외처리가 어렵다는 것과 중첩으로 인한 복잡도가 증가한다는 것이었다.<br>크게 이 두가지 단점을 해결하기 위해서 생겨난 것이 Promise 이다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/01/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/1%EC%9D%BC%EC%B0%A8/" data-id="ckf3cla9a001tl4v46uxwgvtq" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-초창기 막공부/1일차-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/01/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/1%EC%9D%BC%EC%B0%A8-2/" class="article-date">
+  <time datetime="2020-08-31T15:07:08.000Z" itemprop="datePublished">2020-09-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Test/">Test</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/01/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/1%EC%9D%BC%EC%B0%A8-2/">마크다운 문법</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="H1-은-여러개로"><a href="#H1-은-여러개로" class="headerlink" title="H1 은 = 여러개로"></a>H1 은 = 여러개로</h1><ol>
+<li>첫번째</li>
+<li>두번째</li>
+<li>세번째</li>
+</ol>
+<pre>
+<code>
+print("코드는 pre  code 태그로 감싸주거나 ")
+</code>
+</pre>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">그레이브 엑센트 3개로 감싸준다</span><br></pre></td></tr></table></figure>
+
+
+<p>링크<br> <a target="_blank" rel="noopener" href="https://codepen.io/pen?&editable=true&editors=0010">CodePen에서 실행하기</a></p>
+<p>인용</p>
+<blockquote>
+<p>안녕하세요</p>
+</blockquote>
+<figure class="highlight javascript"><figcaption><span>이렇게 쓰니</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">코드</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/01/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/1%EC%9D%BC%EC%B0%A8-2/" data-id="ckf3cla97001pl4v434i9gefz" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-초창기 막공부/hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/31/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/hello-world/" class="article-date">
+  <time datetime="2020-08-31T14:50:09.216Z" itemprop="datePublished">2020-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/31/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/08/31/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/hello-world/" data-id="ckf3cla9i0023l4v4brgj3c24" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; 이전</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">카테고리</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Test/">Test</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%82%AC%EC%A7%84/">사진</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-Node-js/">React + Node.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/%EC%9B%B9/">웹</a></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">아카이브</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">9월 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">8월 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">최근 포스트</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/15/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">푸시알림</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/10/%EC%82%AC%EC%A7%84/%ED%85%8C%EC%8A%A4%ED%8A%B8/">화질테스트</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/09/%EA%B3%B5%EB%B6%80/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/">브라우저는 어떻게 작동하는가??</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 cheal3@naver.com<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>React와 Node.js로 만드는 고객 관리 시스템 개발-5 | Choi Dong Wook blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="고객 컴포넌트 내용 분리하기어제는 리액트 프로젝트를 만들고 고객 한명의 정보를 담아 출력하는 Customer.js 컴포넌트를 만들고 깃허브에 올리는 것 까지 하였다. 오늘은 한 명의 고객이 가지고 있는 정보가 많아 다루기 어려울 때  컴포넌트의 내용을 분리하는 방법을 알아보자. App.js  전에 작성했던 회원의 정보에 id  와 image 정보를 추가해">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React와 Node.js로 만드는 고객 관리 시스템 개발-5">
+<meta property="og:url" content="http://cheal3.github.io/2020/09/03/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-5/index.html">
+<meta property="og:site_name" content="Choi Dong Wook blog">
+<meta property="og:description" content="고객 컴포넌트 내용 분리하기어제는 리액트 프로젝트를 만들고 고객 한명의 정보를 담아 출력하는 Customer.js 컴포넌트를 만들고 깃허브에 올리는 것 까지 하였다. 오늘은 한 명의 고객이 가지고 있는 정보가 많아 다루기 어려울 때  컴포넌트의 내용을 분리하는 방법을 알아보자. App.js  전에 작성했던 회원의 정보에 id  와 image 정보를 추가해">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="http://cheal3.github.io/img/5%EA%B2%B0%EA%B3%BC.png">
+<meta property="og:image" content="http://cheal3.github.io/img/5%EA%B2%B0%EA%B3%BC2.png">
+<meta property="article:published_time" content="2020-09-03T02:27:24.000Z">
+<meta property="article:modified_time" content="2020-09-07T06:51:00.975Z">
+<meta property="article:author" content="cheal3@naver.com">
+<meta property="article:tag" content="IT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cheal3.github.io/img/5%EA%B2%B0%EA%B3%BC.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Choi Dong Wook blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Choi Dong Wook blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="검색"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cheal3.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-고객관리예제 공부/project-5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/03/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-5/" class="article-date">
+  <time datetime="2020-09-03T02:27:24.000Z" itemprop="datePublished">2020-09-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/React-Node-js/">React + Node.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React와 Node.js로 만드는 고객 관리 시스템 개발-5
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="고객-컴포넌트-내용-분리하기"><a href="#고객-컴포넌트-내용-분리하기" class="headerlink" title="고객 컴포넌트 내용 분리하기"></a>고객 컴포넌트 내용 분리하기</h1><p>어제는 리액트 프로젝트를 만들고 고객 한명의 정보를 담아 출력하는 Customer.js 컴포넌트를 만들고 깃허브에 올리는 것 까지 하였다.</p>
+<p>오늘은 한 명의 고객이 가지고 있는 정보가 많아 다루기 어려울 때  컴포넌트의 내용을 분리하는 방법을 알아보자.</p>
+<h2>App.js</h2>
+
+<p>전에 작성했던 회원의 정보에 <code>id</code>  와 <code>image</code> 정보를 추가해 보자.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> Customer <span class="keyword">from</span> <span class="string">&#x27;./components/Customer&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./App.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> customer = &#123;</span><br><span class="line">  <span class="string">&#x27;id&#x27;</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="string">&#x27;image&#x27;</span>: <span class="string">&#x27;https://placeimg.com/64/64/any&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;염소&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;birthday&#x27;</span>:<span class="string">&#x27;031223&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;gender&#x27;</span>:<span class="string">&#x27;여자&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;job&#x27;</span>:<span class="string">&#x27;대학생&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Customer</span><br><span class="line">    id = &#123;customer.id&#125;</span><br><span class="line">    image = &#123;customer.image&#125;</span><br><span class="line">    name=&#123;customer.name&#125;</span><br><span class="line">    birthday=&#123;customer.birthday&#125;</span><br><span class="line">    gender=&#123;customer.gender&#125;</span><br><span class="line">    job=&#123;customer.job&#125;/&gt;</span><br><span class="line">  );</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<p><code>https://placeimg.com/64/64/any</code> 를 사용하면 원하는 픽셀크기와 원하는 카테고리의 랜덤 사진을 가져올 수 있다.</p>
+<h2>Customer.js</h2>
+
+<p><code>Customer.js</code> 는 고객에 대한 정보를 출력하는 역할을 수행한다고 하였다.  그래서 출력할 내용이 많으면 적절히 구조화하여 관리하는 것이 중요하다. 프로젝트에서는 Customer를 CustomerProfile과 CustomerInfo 두 가지 요소로 구조화하였다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Customer</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;CustomerProfile id=&#123;<span class="built_in">this</span>.props.id&#125; image=&#123;<span class="built_in">this</span>.props.image&#125; name=&#123;<span class="built_in">this</span>.props.name&#125;/&gt;</span><br><span class="line">        <span class="comment">// 이런애들이 있는데 값은 CustomerProfile 알아서 줄거에요</span></span><br><span class="line">        &lt;CustomerInfo birthday=&#123;<span class="built_in">this</span>.props.birthday&#125; gender=&#123;<span class="built_in">this</span>.props.gender&#125; job=&#123;<span class="built_in">this</span>.props.job&#125;/&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomerProfile</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;img src = &#123;<span class="built_in">this</span>.props.image&#125; alt=<span class="string">&quot;profile&quot;</span>/&gt;</span><br><span class="line">        &lt;h2&gt;&#123;<span class="built_in">this</span>.props.name&#125;(&#123;<span class="built_in">this</span>.props.id&#125;)&lt;/h2&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomerInfo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;p&gt;&#123;<span class="built_in">this</span>.props.birthday&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;<span class="built_in">this</span>.props.gender&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;<span class="built_in">this</span>.props.job&#125;&lt;/p&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Customer;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>적용 결과</strong></p>
+<p><img src="/img/5%EA%B2%B0%EA%B3%BC.png"></p>
+<h2>App.js</h2>
+
+<p>다시 <code>App.js</code> 로 돌아와서 이번에는 한 명이 아닌 3명의 고객의 정보가 들어있는 <code>customers</code> 배열이 있다고 가정해보자.</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//App.js</span></span><br><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> Customer <span class="keyword">from</span> <span class="string">&#x27;./components/Customer&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./App.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> customers = [</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&#x27;id&#x27;</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="string">&#x27;image&#x27;</span>: <span class="string">&#x27;https://placeimg.com/64/64/any&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;염소&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;birthday&#x27;</span>:<span class="string">&#x27;031223&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;gender&#x27;</span>:<span class="string">&#x27;여자&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;job&#x27;</span>:<span class="string">&#x27;대학생&#x27;</span></span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line"><span class="string">&#x27;id&#x27;</span>: <span class="number">2</span>,</span><br><span class="line"><span class="string">&#x27;image&#x27;</span>: <span class="string">&#x27;https://placeimg.com/64/64/2&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;최동욱&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;birthday&#x27;</span>: <span class="string">&#x27;951211&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;남자&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;job&#x27;</span>: <span class="string">&#x27;인턴&#x27;</span></span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line"><span class="string">&#x27;id&#x27;</span>: <span class="number">3</span>,</span><br><span class="line"><span class="string">&#x27;image&#x27;</span>: <span class="string">&#x27;https://placeimg.com/64/64/3&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;털보&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;birthday&#x27;</span>: <span class="string">&#x27;961127&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;남자&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;job&#x27;</span>: <span class="string">&#x27;개&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>위와 같은 경우 기존의 방식을 사용하면 코드가 굉장히 길어지기 때문에 다음과 같이 고쳐주자. <code>App</code> class를 다음과 같이 바꿔주자</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">    &#123;customers.map(<span class="function"><span class="params">c</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Customer</span> <span class="attr">key</span> = <span class="string">&#123;c.id&#125;</span> <span class="attr">id</span> = <span class="string">&#123;c.id&#125;</span> <span class="attr">image</span> = <span class="string">&#123;c.image&#125;</span> <span class="attr">name</span> = <span class="string">&#123;c.name&#125;</span> 			<span class="attr">birthday</span> = <span class="string">&#123;c.birthday&#125;</span>  <span class="attr">gender</span> = <span class="string">&#123;c.gender&#125;</span>  <span class="attr">job</span> = <span class="string">&#123;c.job&#125;/</span>&gt;</span></span></span><br><span class="line"> 			&#125;</span><br><span class="line"> 		  )</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	);</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>
+
+<p><code>map</code> 이란 특정한 List가 있을 때 해당 리스트의 각 원소에 특정한 문법을 적용한 결과 리스트를 반환한다.  다시 말해서 <code>customers </code> 의 각 원소들에 대한 Element를 반환하는 것이다.</p>
+<p>map을 이용해 다수의 정보를 출력할 때는 key라는 이름의 Props를 사용해야 한다.</p>
+<p><strong>적용 결과</strong></p>
+<p><img src="/img/5%EA%B2%B0%EA%B3%BC2.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/03/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-5/" data-id="ckf3cla8h000hl4v435pf5if8" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/03/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">최신</strong>
+      <div class="article-nav-title">
+        
+          React와 Node.js로 만드는 고객 관리 시스템 개발-6
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/02/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">이전</strong>
+      <div class="article-nav-title">React와 Node.js로 만드는 고객 관리 시스템 개발-4</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">카테고리</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Test/">Test</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%82%AC%EC%A7%84/">사진</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-Node-js/">React + Node.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/%EC%9B%B9/">웹</a></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">아카이브</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">9월 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">8월 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">최근 포스트</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/15/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">푸시알림</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/10/%EC%82%AC%EC%A7%84/%ED%85%8C%EC%8A%A4%ED%8A%B8/">화질테스트</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/09/%EA%B3%B5%EB%B6%80/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/">브라우저는 어떻게 작동하는가??</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 cheal3@naver.com<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

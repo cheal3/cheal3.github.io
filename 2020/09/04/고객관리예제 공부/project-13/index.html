@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>React와 Node.js로 만드는 고객 관리 시스템 개발-13 | Choi Dong Wook blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="부모 컴포넌트의 State변경을 통한 고객         정보 갱신지금까지는 정보가 추가되면 새로고침을 통해서 확인할 수 있었다. 하지만 리액트는 기본적으로 SPA(Single Page Application) 구조로 동작하므로 전체 페이지를 새로고침하는 것은 비효율적이다. 이럴때는 고객 추가(Customer Add) 컴포넌트에서 부모 컴포넌트의 State를">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React와 Node.js로 만드는 고객 관리 시스템 개발-13">
+<meta property="og:url" content="http://cheal3.github.io/2020/09/04/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-13/index.html">
+<meta property="og:site_name" content="Choi Dong Wook blog">
+<meta property="og:description" content="부모 컴포넌트의 State변경을 통한 고객         정보 갱신지금까지는 정보가 추가되면 새로고침을 통해서 확인할 수 있었다. 하지만 리액트는 기본적으로 SPA(Single Page Application) 구조로 동작하므로 전체 페이지를 새로고침하는 것은 비효율적이다. 이럴때는 고객 추가(Customer Add) 컴포넌트에서 부모 컴포넌트의 State를">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2020-09-04T05:58:49.000Z">
+<meta property="article:modified_time" content="2020-09-04T05:58:21.298Z">
+<meta property="article:author" content="cheal3@naver.com">
+<meta property="article:tag" content="IT">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Choi Dong Wook blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Choi Dong Wook blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="검색"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cheal3.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-고객관리예제 공부/project-13" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/04/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-13/" class="article-date">
+  <time datetime="2020-09-04T05:58:49.000Z" itemprop="datePublished">2020-09-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/React-Node-js/">React + Node.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React와 Node.js로 만드는 고객 관리 시스템 개발-13
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="부모-컴포넌트의-State변경을-통한-고객-정보-갱신"><a href="#부모-컴포넌트의-State변경을-통한-고객-정보-갱신" class="headerlink" title="부모 컴포넌트의 State변경을 통한 고객         정보 갱신"></a>부모 컴포넌트의 State변경을 통한 고객         정보 갱신</h1><p>지금까지는 정보가 추가되면 새로고침을 통해서 확인할 수 있었다. 하지만 리액트는 기본적으로 <strong>SPA(Single Page Application)</strong> 구조로 동작하므로 전체 페이지를 새로고침하는 것은 비효율적이다.</p>
+<p>이럴때는 고객 추가(Customer Add) 컴포넌트에서 부모 컴포넌트의 State를 변경하는 식으로 필요한 부분만 새로고침 하도록 설정하면 된다. (Props를 전달)  </p>
+<h2>전체 고객 목록 다시 불러오기 </h2>
+
+<p>가장 대표적인 방법은 전체 고객 목록을 다시 불러옴으로써 State를 갱신하는 방식이다.</p>
+<p><code>App.js</code> 를 다음과 같이 변경하자</p>
+<figure class="highlight javascript"><figcaption><span>App.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> Customer <span class="keyword">from</span> <span class="string">&#x27;./components/Customer&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./App.css&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> Paper <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/Paper&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> Table <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/Table&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> TableHead <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/TableHead&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> TableBody <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/TableBody&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> TableRow <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/TableRow&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> TableCell <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/TableCell&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> CircularProgress <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/CircularProgress&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; withStyles &#125; <span class="keyword">from</span> <span class="string">&#x27;@material-ui/core/styles&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> CustomerAdd <span class="keyword">from</span> <span class="string">&#x27;./components/CustomerAdd&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> styles = <span class="function"><span class="params">theme</span> =&gt;</span> (&#123;</span><br><span class="line">  root: &#123;</span><br><span class="line">    width: <span class="string">&quot;100%&quot;</span>,</span><br><span class="line">    marginTop: theme.spacing.unit * <span class="number">3</span>,</span><br><span class="line">    overflowX: <span class="string">&quot;auto&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    table: &#123;</span><br><span class="line">      minWidth: <span class="number">1080</span></span><br><span class="line">    &#125;,</span><br><span class="line">    progress:&#123;</span><br><span class="line">      margin: theme.spacing.unit *<span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.state= &#123;</span><br><span class="line">      customers: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      completed: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">this</span>.stateRefresh = <span class="built_in">this</span>.stateRefresh.bind(<span class="built_in">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  stateRefresh()&#123;</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      customers:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      completed: <span class="number">0</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">this</span>.callApi()</span><br><span class="line">    .then(<span class="function"><span class="params">res</span> =&gt;</span> <span class="built_in">this</span>.setState(&#123;<span class="attr">customers</span>: res&#125;))</span><br><span class="line">    .catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount()&#123;</span><br><span class="line">    <span class="built_in">this</span>.timer = <span class="built_in">setInterval</span>(<span class="built_in">this</span>.progress,<span class="number">20</span>);</span><br><span class="line">    <span class="built_in">this</span>.callApi()</span><br><span class="line">      .then(<span class="function"><span class="params">res</span> =&gt;</span> <span class="built_in">this</span>.setState(&#123;<span class="attr">customers</span>:res&#125;))</span><br><span class="line">      .catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err));</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUnmount()&#123;</span><br><span class="line">    <span class="built_in">clearInterval</span>(<span class="built_in">this</span>.timer);</span><br><span class="line">  &#125;</span><br><span class="line">  callApi = <span class="keyword">async</span>() =&gt;&#123;</span><br><span class="line">    <span class="keyword">const</span> response = <span class="keyword">await</span> fetch(<span class="string">&#x27;/api/customers&#x27;</span>);</span><br><span class="line">    <span class="keyword">const</span> body = <span class="keyword">await</span> response.json();</span><br><span class="line">    <span class="keyword">return</span> body;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  progress = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;completed &#125; = <span class="built_in">this</span>.state;</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123; <span class="attr">completed</span>:completed &gt;=<span class="number">100</span>?<span class="number">0</span> : completed +<span class="number">1</span>&#125;);</span><br><span class="line">  &#125;;</span><br><span class="line">  render()&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> &#123; classes &#125; = <span class="built_in">this</span>.props;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">      &lt;Paper className = &#123;classes.root&#125;&gt;</span><br><span class="line">        &lt;Table className = &#123;classes.table&#125;&gt;</span><br><span class="line">          &lt;TableHead&gt;</span><br><span class="line">            &lt;TableRow&gt;</span><br><span class="line">              &lt;TableCell&gt; 번호 &lt;/TableCell&gt;</span><br><span class="line">              &lt;TableCell&gt; 이미지 &lt;/TableCell&gt;</span><br><span class="line">              &lt;TableCell&gt; 이름 &lt;/TableCell&gt;</span><br><span class="line">              &lt;TableCell&gt; 생년월일 &lt;/TableCell&gt;</span><br><span class="line">              &lt;TableCell&gt; 성별 &lt;/TableCell&gt;</span><br><span class="line">              &lt;TableCell&gt; 직업 &lt;/TableCell&gt;</span><br><span class="line">            &lt;/TableRow&gt;</span><br><span class="line">          &lt;/TableHead&gt;</span><br><span class="line">          &lt;TableBody&gt;</span><br><span class="line">          &#123;<span class="built_in">this</span>.state.customers ?</span><br><span class="line">            <span class="built_in">this</span>.state.customers.map(<span class="function"><span class="params">c</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Customer</span> <span class="attr">key</span>=<span class="string">&#123;c.id&#125;</span> <span class="attr">id</span>=<span class="string">&#123;c.id&#125;</span> <span class="attr">image</span>=<span class="string">&#123;c.image&#125;</span> <span class="attr">name</span>=<span class="string">&#123;c.name&#125;</span> <span class="attr">birthday</span>=<span class="string">&#123;c.birthday&#125;</span> <span class="attr">gender</span>=<span class="string">&#123;c.gender&#125;</span> <span class="attr">job</span>=<span class="string">&#123;c.job&#125;</span> /&gt;</span></span></span><br><span class="line">            &#125;) :</span><br><span class="line">            &lt;TableRow&gt;</span><br><span class="line">              &lt;TableCell colSpan=<span class="string">&quot;6&quot;</span> align=<span class="string">&quot;center&quot;</span>&gt;</span><br><span class="line">              &lt;CircularProgress className=&#123;classes.progress&#125; variant=<span class="string">&quot;determinate&quot;</span> value=&#123;<span class="built_in">this</span>.state.completed&#125; /&gt;</span><br><span class="line">              &lt;/TableCell&gt;</span><br><span class="line">          &lt;/TableRow&gt;</span><br><span class="line">        &#125;</span><br><span class="line">          &lt;/TableBody&gt;</span><br><span class="line">      &lt;/Table&gt;</span><br><span class="line">    &lt;/Paper&gt;</span><br><span class="line">    &lt;CustomerAdd stateRefresh=&#123;<span class="built_in">this</span>.stateRefresh&#125;/&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> withStyles(styles)(App);</span><br></pre></td></tr></table></figure>    
+
+
+
+<p>CustomerAdd 컴포넌트로 stateRefresh()함수를 보내면 CustomerAdd 컴포넌트가 부모 컴포넌트인 App 컴포넌트의 State를 갱신하게 된다.  </p>
+<p>CustomerAdd.js에 가서 <code>window.location.reload()</code> 함수를 제거하고 다음의 구문을 넣자.</p>
+<figure class="highlight javascript"><figcaption><span>CustomerAdd.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.props.stateRefresh();</span><br></pre></td></tr></table></figure>  
+
+
+
+
+
+<p>다만 고객 목록 데이터를 불러오는 과정은 비동기적으로 수행된다는 점에서 항상 고객 데이터를 추가한 이후에 고객 목록 데이터를 불러온다는 것을 보장하지 못한다. 따라서 다음과 같이 고객 추가 이후에 서버로부터 응답을 받고 나서 고객 목록을 다시 불러오도록 설정해야한다</p>
+<figure class="highlight javascript"><figcaption><span>CustomerAdd.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">handleFormSubmit(e)&#123;</span><br><span class="line">    e.preventDefault()</span><br><span class="line">    <span class="built_in">this</span>.addCustomer()</span><br><span class="line">    .then(<span class="function">(<span class="params">response</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(response.data);</span><br><span class="line">      <span class="built_in">this</span>.props.stateRefresh();</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      file: <span class="literal">null</span>,</span><br><span class="line">      userName: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      birthday: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      gender: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      job: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      fileName: <span class="string">&#x27;&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>  
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/04/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-13/" data-id="ckf3cla8d000cl4v4g00r3wcq" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%99/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">최신</strong>
+      <div class="article-nav-title">
+        
+          React x Express 연동하여 데이터 전송하기
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/04/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-12/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">이전</strong>
+      <div class="article-nav-title">React와 Node.js로 만드는 고객 관리 시스템 개발-12</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">카테고리</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Test/">Test</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%82%AC%EC%A7%84/">사진</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-Node-js/">React + Node.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/%EC%9B%B9/">웹</a></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">아카이브</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">9월 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">8월 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">최근 포스트</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/15/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">푸시알림</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/10/%EC%82%AC%EC%A7%84/%ED%85%8C%EC%8A%A4%ED%8A%B8/">화질테스트</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/09/%EA%B3%B5%EB%B6%80/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/">브라우저는 어떻게 작동하는가??</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 cheal3@naver.com<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
