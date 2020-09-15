@@ -65,6 +65,88 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-초창기 막공부/2일차 React_2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8%20React_2/" class="article-date">
+  <time datetime="2020-09-02T06:21:14.000Z" itemprop="datePublished">2020-09-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8%20React_2/">막공부</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="엘리먼트-렌더링"><a href="#엘리먼트-렌더링" class="headerlink" title="엘리먼트 렌더링"></a><strong>엘리먼트 렌더링</strong></h1> <h4>엘리먼트는 React 앱의 가장 작은 단위이다.</h4>
+
+<p>엘리먼트는 화면에 표시할 내용을 기술한다.</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>  브라우저 DOM 엘리먼트와 달리 React 엘리먼트는 일반 객체이며(plain object) 쉽게 생성할 수 있다. React DOM은 React 엘리먼트와 일치하도록 DOM을 업데이트 한다.</p>
+<blockquote>
+<p><strong>주의</strong></p>
+<p>더 널리 알려진 개념인 “컴포넌트”와 엘리먼트를 혼동할 수 있다.</p>
+</blockquote>
+<h3 id="DOM에-엘리먼트-렌더링하기"><a href="#DOM에-엘리먼트-렌더링하기" class="headerlink" title="DOM에 엘리먼트 렌더링하기"></a><strong>DOM에 엘리먼트 렌더링하기</strong></h3><hr>
+
+<p>HTML 파일 어딘가에 <code>&lt;div&gt;</code>가 있다고 가정해 보자.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id = <span class="string">&quot;root&quot;</span>&gt; &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>  이 안에 들어가는 모든 엘리먼트를 React DOM에서 관리하기 때문에 이것을 “루트” DOM 노드라고 부른다.</p>
+<p>React로 구현된 애플리케이션은 일반적으로 하나의 루트 DOM 노드가 있다. React를 기존 앱에 통합하려는 경우 원하는 만큼 많은 수의 독립된 루트 DOM 노드가 있을 수 있다.</p>
+<p>React 엘리먼트를 루트 DOM 노드에 렌더링하려면 둘 다 <code>ReactDOM.render()</code>로 전달하면 된다.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">ReactDOM.render(element,<span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://ko.reactjs.org/redirect-to-codepen/rendering-elements/render-an-element">CodePen에서 실행하기</a></p>
+<p>위 코드를 실행하면 화면에 “Hello, World!” 가 보인다.</p>
+<h2><strong>렌더링 된 엘리먼트 업데이트하기</strong></h2>
+<hr>
+
+<p>React 엘리먼트는 불변객체 이다. 엘리먼트를 생성한 이후에는 해당 엘리먼트의 자식이나 속성을 변경할 수 없다. 엘리먼트는 영화에서 하나의 프레임과 같이 특정 시점의 UI를 보여준다.</p>
+<p>지금까지 소개한 내용을 바탕으로 하면 UI를 업데이트하는 유일한 방법은 새로운 엘리먼트를 생성하고 이를 <code>ReactDOM.render()</code>로 전달하는 것이다.</p>
+<p>예시로 똑딱거리는 시계를 살펴보자.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> element = (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Hello, world!&lt;/h1&gt;</span><br><span class="line">      &lt;h2&gt;It is &#123;<span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString()&#125;.&lt;/h2&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">  ReactDOM.render(element, <span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">setInterval</span>(tick, <span class="number">1000</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://ko.reactjs.org/redirect-to-codepen/rendering-elements/update-rendered-element">CodePen에서 실행하기</a></p>
+<p>위 함수는 <code>setInterval()</code> 콜백을 이용해 매 초마다 <code>ReactDOM.render()</code>를 호출합니다.</p>
+<blockquote>
+<p>주의<br>실제로 대부분의 React 앱은 <code>ReactDOM.render()</code>를 한 번만 호출합니다.</p>
+</blockquote>
+<h2><strong>변경된 부분만 업데이트하기</strong></h2>
+<hr>
+
+<p>React DOM은 해당 엘리먼트와 그 자식 엘리먼트를 이전의 엘리먼트와 비교하고 DOM을 원하는 상태로 만드는데 필요한 경우에만 DOM을 업데이트한다.</p>
+<p>개발자 도구를 이용해 마지막 예시를 살펴보면 이를 확인할 수 있다.</p>
+<p><img src="https://ko.reactjs.org/c158617ed7cc0eac8f58330e49e48224/granular-dom-updates.gif" alt="DOM inspector showing granular updates"></p>
+<p>매초 전체 UI를 다시 그리도록 엘리먼트를 만들었지만 React DOM은 내용이 변경된 텍스트 노드만 업데이트했다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8%20React_2/" data-id="cketmsojj0011y0v4a43edpb1" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-초창기 막공부/2일차 React_1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8%20React_1/" class="article-date">
@@ -651,6 +733,10 @@ print("코드는 pre  code 태그로 감싸주거나 ")
       <ul>
         
           <li>
+            <a href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
           </li>
         
@@ -664,10 +750,6 @@ print("코드는 pre  code 태그로 감싸주거나 ")
         
           <li>
             <a href="/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%993/">React x Express 연동하여 데이터 전송하기(3)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%992/">React x Express 연동하여 데이터 전송하기(2)</a>
           </li>
         
       </ul>

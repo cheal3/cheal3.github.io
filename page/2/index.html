@@ -65,6 +65,92 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-고객관리예제 공부/project-10" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/04/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-10/" class="article-date">
+  <time datetime="2020-09-04T01:56:22.000Z" itemprop="datePublished">2020-09-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/React-Node-js/">React + Node.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/04/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-10/">React와 Node.js로 만드는 고객 관리 시스템 개발-10</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="AWS-RDS-서비스를-이용한-DB-연동"><a href="#AWS-RDS-서비스를-이용한-DB-연동" class="headerlink" title="AWS RDS 서비스를 이용한  DB 연동"></a>AWS RDS 서비스를 이용한  DB 연동</h1><p>AWS RDS로 데이터 베이스 만들어 보자</p>
+<p><img src="/img/10RDS.png">    </p>
+<p><img src="/img/10RDS2.png">  </p>
+<p><img src="/img/10RDS3.png">  </p>
+<h2>MySQL Workbench</h2>
+
+<p>위에까지 하다가 오류가 발생해서 AWS 설정을 바꿨는데 이게 굉장히 오래 걸려서 중간에 잘려먹었다.  퍼블릭 액세스를 아니오 라고 설정했던 것이 원인이었는데 예로 변경하였더니 정상 작동하였다.</p>
+<p>Workbench와 연동하는 방법은 엔드포인트 주소를 호스트에 입력하고 데이터베이스를 생성할 때 설정했던 ID 와 비밀번호를 쳐서 연동하면 된다.</p>
+<p>연동이 되면 새로운 스키마를 작성하고 다음과 같이 고객 테이블을 구축하자.</p>
+<figure class="highlight sql"><figcaption><span>reactexample</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">USE</span> reactexample;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> CUSTOMER (</span><br><span class="line"></span><br><span class="line">	<span class="keyword">id</span> <span class="built_in">INT</span> PRIMARY <span class="keyword">KEY</span> AUTO_INCREMENT,</span><br><span class="line"></span><br><span class="line">	image <span class="built_in">VARCHAR</span>(<span class="number">1024</span>),</span><br><span class="line"></span><br><span class="line">	<span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">64</span>),</span><br><span class="line"></span><br><span class="line">	birthday <span class="built_in">VARCHAR</span>(<span class="number">64</span>),</span><br><span class="line"></span><br><span class="line">	gender <span class="built_in">VARCHAR</span>(<span class="number">64</span>),</span><br><span class="line"></span><br><span class="line">	job <span class="built_in">VARCHAR</span>(<span class="number">64</span>)</span><br><span class="line"></span><br><span class="line">) <span class="keyword">DEFAULT</span> <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8 <span class="keyword">COLLATE</span> utf8_general_ci;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> CUSTOMER <span class="keyword">VALUES</span> (</span><br><span class="line">	<span class="number">1</span>,</span><br><span class="line">    <span class="string">&#x27;https://placeimg.com/64/64/any&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;염소&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;031223&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;여자&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;대학생&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> CUSTOMER <span class="keyword">VALUES</span> (</span><br><span class="line">	<span class="number">2</span>,</span><br><span class="line">    <span class="string">&#x27;https://placeimg.com/64/64/2&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;최동욱&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;951211&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;남자&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;인턴&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> CUSTOMER <span class="keyword">VALUES</span> (</span><br><span class="line">	<span class="number">3</span>,</span><br><span class="line">    <span class="string">&#x27;https://placeimg.com/64/64/3CUSTOMER&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;털보&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;961127&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;남자&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;개&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>결과 화면</strong></p>
+<p><img src="/img/10%EA%B2%B0%EA%B3%BC.png">  </p>
+<h2>gitignore</h2>
+
+<p>데이터베이스 관련 정보가 깃허브에 올라가지 않도록 서버 쪽 <code>.gitignore</code> 파일을 수정하자</p>
+<figure class="highlight plain"><figcaption><span>.gitignore</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># database</span><br><span class="line">&#x2F;database.json</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<p>이후에 database.json 에서 데이터베이스 정보를 설정하면 된다</p>
+<figure class="highlight json"><figcaption><span>database.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;host&quot;</span>: 데이터베이스 주소,</span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;user&quot;</span>: 데이터베이스 사용자,</span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;password&quot;</span>: 데이터베이스 비밀번호,</span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;port&quot;</span>: <span class="string">&quot;3306&quot;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;database&quot;</span>: 데이터베이스 이름</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2>Node.js와 MySQL 연동하기</h2>
+
+<p>먼저 NPM을 통해서 MySQL 라이브러리를 설치하자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -S mysql</span><br></pre></td></tr></table></figure>
+
+
+
+<p>설치된 MySQL 라이브러리를 활용해서 연동이 가능하다.</p>
+<figure class="highlight javascript"><figcaption><span>server.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="keyword">const</span> port = process.env.PORT || <span class="number">5000</span>;</span><br><span class="line">app.use(bodyParser.json());</span><br><span class="line">app.use(bodyParser.urlencoded(&#123;<span class="attr">extended</span>: <span class="literal">true</span>&#125;));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> data = fs.readFileSync(<span class="string">&#x27;./database.json&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> conf = <span class="built_in">JSON</span>.parse(data);</span><br><span class="line"><span class="keyword">const</span> mysql = <span class="built_in">require</span>(<span class="string">&#x27;mysql&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> connection = mysql.createConnection(&#123;</span><br><span class="line">  host : conf.host,</span><br><span class="line">  user : conf.user,</span><br><span class="line">  password: conf.password,</span><br><span class="line">  port : conf.port,</span><br><span class="line">  database: conf.database</span><br><span class="line">&#125;);</span><br><span class="line">connection.connect();</span><br><span class="line">app.get(<span class="string">&#x27;/api/customers/&#x27;</span>, <span class="function">(<span class="params">req,res</span>) =&gt;</span>&#123;</span><br><span class="line">  connection.query(</span><br><span class="line">    <span class="string">&#x27;SELECT * FROM CUSTOMER&#x27;</span>,</span><br><span class="line">    (err , rows, fields) =&gt; &#123;</span><br><span class="line">      res.send(rows);</span><br><span class="line">    &#125;</span><br><span class="line">  )</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(port, <span class="function">() =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`Listening on port <span class="subst">$&#123;port&#125;</span>`</span>));</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>CORS 라는 것도 있는데 도메인 또는 포트가 다른 서버의 자원을 요청하는 매커니즘이다. 서버를 8000번 포트 , REACT를 3000번 포트에서 실행하면 발생하거나 , 이미지를 저장하는 서버와 접속하는 서버가 다른 경우이다.</p>
+</blockquote>
+<p><strong>결과 화면</strong></p>
+<p><img src="/img/10%EA%B2%B0%EA%B3%BC2.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/04/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-10/" data-id="cketmsoiw0005y0v45fqh6aow" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-고객관리예제 공부/project-9" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/09/03/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-9/" class="article-date">
@@ -687,88 +773,6 @@
 
 
   
-    <article id="post-초창기 막공부/2일차 React_2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8%20React_2/" class="article-date">
-  <time datetime="2020-09-02T06:21:14.000Z" itemprop="datePublished">2020-09-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8%20React_2/">막공부</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="엘리먼트-렌더링"><a href="#엘리먼트-렌더링" class="headerlink" title="엘리먼트 렌더링"></a><strong>엘리먼트 렌더링</strong></h1> <h4>엘리먼트는 React 앱의 가장 작은 단위이다.</h4>
-
-<p>엘리먼트는 화면에 표시할 내용을 기술한다.</p>
- <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
-
-<p>  브라우저 DOM 엘리먼트와 달리 React 엘리먼트는 일반 객체이며(plain object) 쉽게 생성할 수 있다. React DOM은 React 엘리먼트와 일치하도록 DOM을 업데이트 한다.</p>
-<blockquote>
-<p><strong>주의</strong></p>
-<p>더 널리 알려진 개념인 “컴포넌트”와 엘리먼트를 혼동할 수 있다.</p>
-</blockquote>
-<h3 id="DOM에-엘리먼트-렌더링하기"><a href="#DOM에-엘리먼트-렌더링하기" class="headerlink" title="DOM에 엘리먼트 렌더링하기"></a><strong>DOM에 엘리먼트 렌더링하기</strong></h3><hr>
-
-<p>HTML 파일 어딘가에 <code>&lt;div&gt;</code>가 있다고 가정해 보자.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id = <span class="string">&quot;root&quot;</span>&gt; &lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<p>  이 안에 들어가는 모든 엘리먼트를 React DOM에서 관리하기 때문에 이것을 “루트” DOM 노드라고 부른다.</p>
-<p>React로 구현된 애플리케이션은 일반적으로 하나의 루트 DOM 노드가 있다. React를 기존 앱에 통합하려는 경우 원하는 만큼 많은 수의 독립된 루트 DOM 노드가 있을 수 있다.</p>
-<p>React 엘리먼트를 루트 DOM 노드에 렌더링하려면 둘 다 <code>ReactDOM.render()</code>로 전달하면 된다.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello, World!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">ReactDOM.render(element,<span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://ko.reactjs.org/redirect-to-codepen/rendering-elements/render-an-element">CodePen에서 실행하기</a></p>
-<p>위 코드를 실행하면 화면에 “Hello, World!” 가 보인다.</p>
-<h2><strong>렌더링 된 엘리먼트 업데이트하기</strong></h2>
-<hr>
-
-<p>React 엘리먼트는 불변객체 이다. 엘리먼트를 생성한 이후에는 해당 엘리먼트의 자식이나 속성을 변경할 수 없다. 엘리먼트는 영화에서 하나의 프레임과 같이 특정 시점의 UI를 보여준다.</p>
-<p>지금까지 소개한 내용을 바탕으로 하면 UI를 업데이트하는 유일한 방법은 새로운 엘리먼트를 생성하고 이를 <code>ReactDOM.render()</code>로 전달하는 것이다.</p>
-<p>예시로 똑딱거리는 시계를 살펴보자.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> element = (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Hello, world!&lt;/h1&gt;</span><br><span class="line">      &lt;h2&gt;It is &#123;<span class="keyword">new</span> <span class="built_in">Date</span>().toLocaleTimeString()&#125;.&lt;/h2&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">  ReactDOM.render(element, <span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">setInterval</span>(tick, <span class="number">1000</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://ko.reactjs.org/redirect-to-codepen/rendering-elements/update-rendered-element">CodePen에서 실행하기</a></p>
-<p>위 함수는 <code>setInterval()</code> 콜백을 이용해 매 초마다 <code>ReactDOM.render()</code>를 호출합니다.</p>
-<blockquote>
-<p>주의<br>실제로 대부분의 React 앱은 <code>ReactDOM.render()</code>를 한 번만 호출합니다.</p>
-</blockquote>
-<h2><strong>변경된 부분만 업데이트하기</strong></h2>
-<hr>
-
-<p>React DOM은 해당 엘리먼트와 그 자식 엘리먼트를 이전의 엘리먼트와 비교하고 DOM을 원하는 상태로 만드는데 필요한 경우에만 DOM을 업데이트한다.</p>
-<p>개발자 도구를 이용해 마지막 예시를 살펴보면 이를 확인할 수 있다.</p>
-<p><img src="https://ko.reactjs.org/c158617ed7cc0eac8f58330e49e48224/granular-dom-updates.gif" alt="DOM inspector showing granular updates"></p>
-<p>매초 전체 UI를 다시 그리도록 엘리먼트를 만들었지만 React DOM은 내용이 변경된 텍스트 노드만 업데이트했다.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/02/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/2%EC%9D%BC%EC%B0%A8%20React_2/" data-id="cketmsojj0011y0v4a43edpb1" class="article-share-link">공유</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -812,6 +816,10 @@
       <ul>
         
           <li>
+            <a href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">(no title)</a>
+          </li>
+        
+          <li>
             <a href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
           </li>
         
@@ -825,10 +833,6 @@
         
           <li>
             <a href="/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%993/">React x Express 연동하여 데이터 전송하기(3)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%992/">React x Express 연동하여 데이터 전송하기(2)</a>
           </li>
         
       </ul>
