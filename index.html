@@ -65,10 +65,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-푸시알림" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-공부/잡공부/푸시알림" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/09/15/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/" class="article-date">
-  <time datetime="2020-09-15T02:41:23.000Z" itemprop="datePublished">2020-09-15</time>
+    <a href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/" class="article-date">
+  <time datetime="2020-09-15T09:28:14.000Z" itemprop="datePublished">2020-09-15</time>
 </a>
     
   </div>
@@ -79,7 +79,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/15/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">푸시알림</a>
+      <a class="article-title" href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">기획) 기능정의</a>
     </h1>
   
 
@@ -87,33 +87,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/15/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/" data-id="ckf3cpmmq00006ov4cm4m5nc0" class="article-share-link">공유</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-공부/잡공부/푸시알림" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/" class="article-date">
-  <time datetime="2020-09-15T02:13:57.316Z" itemprop="datePublished">2020-09-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>asd</p>
+        <h1 id="Spin-pic"><a href="#Spin-pic" class="headerlink" title="Spin pic"></a>Spin pic</h1><p><img src="/img/ezgif.com-video-to-gif.gif">  </p>
+<p>FCM은 앱의 키값을 식별하여 특정 스마트폰에 데이터를 전달할 수 있다. 사용자가 앱을 설치하고 알람설정에 동의하면 Instance ID에 해당하는 FCM 토큰을 얻을 수 있다. FCM 의 push 메시지는 앱의 고유한 키 값과 사용자들의 토큰을 통해 이루어진다.</p>
+<p>푸시 메시지는 앱의 key값과 사용자 고유의 token 값이 있어야 보낼 수 있다.<br>사용자에게 푸시를 전송하기 위해서는</p>
+<ol>
+<li>유저 고유의 id 값으로 토큰을 생성하고 정보를 조회하는 Job 을 만들고</li>
+<li>FCM이나 Kakao 푸시 서버로 전송하는 job을 생성한다.</li>
+</ol>
+<p>(카카오 푸시 서버란 카카오톡 메시지를 보내는 것이 아닌 자체 개발 앱에서 푸시 메시지를 보내는 api를 제공<br>  현재 안드로이드는 구글 그리고 IOS는 애플에서 푸시기능을 제공하고있는데 항상 통신중인 상태에서 푸시를 받는 방식은 너무나 비효율적이라 (푸시를 받기 위해 24시간 서버와 통신해야 합니다) “필요할 때만” 데이터를 전달하기 위한 서버를 카카오에서 제공하고 있는 것 )</p>
+<p>Job을 생성하여 일을 처리하는 이유는</p>
+<ol>
+<li>서버에서 트래픽을 우선 받아내는 것이 중요하므로 간단한 요청만 처리하고 나머지는 전부 Job형태로 만들어서 처리</li>
+<li>외부 자원에(DB, 카카오 서버) 의존하는 경우 어떤 Job에서 장애가 발생했는지를 통해 쉽게 파악이 가능하다.</li>
+</ol>
 
       
     </div>
@@ -252,58 +238,14 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
 
 
   
-    <article id="post-사진/테스트" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-쓰레기통/웹/브라우저" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/09/10/%EC%82%AC%EC%A7%84/%ED%85%8C%EC%8A%A4%ED%8A%B8/" class="article-date">
-  <time datetime="2020-09-10T06:19:48.000Z" itemprop="datePublished">2020-09-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%EC%82%AC%EC%A7%84/">사진</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/10/%EC%82%AC%EC%A7%84/%ED%85%8C%EC%8A%A4%ED%8A%B8/">화질테스트</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/img/%ED%99%94%EC%A7%88%ED%85%8C%EC%8A%A4%ED%8A%B8.png"></p>
-<blockquote>
-<p>대만 화련 (업데이트했어요5)</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/10/%EC%82%AC%EC%A7%84/%ED%85%8C%EC%8A%A4%ED%8A%B8/" data-id="ckf3cla94001kl4v49kuzgiz7" class="article-share-link">공유</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-공부/웹/브라우저" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/09/%EA%B3%B5%EB%B6%80/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/" class="article-date">
+    <a href="/2020/09/09/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/" class="article-date">
   <time datetime="2020-09-09T06:48:52.000Z" itemprop="datePublished">2020-09-09</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/%EC%9B%B9/">웹</a>
+    <a class="article-category-link" href="/categories/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/">쓰레기통</a>
   </div>
 
   </div>
@@ -314,7 +256,7 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/09/%EA%B3%B5%EB%B6%80/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/">브라우저는 어떻게 작동하는가??</a>
+      <a class="article-title" href="/2020/09/09/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/">브라우저는 어떻게 작동하는가??</a>
     </h1>
   
 
@@ -386,7 +328,7 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/09/%EA%B3%B5%EB%B6%80/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/" data-id="ckf3cla9k0026l4v4gakcey63" class="article-share-link">공유</a>
+      <a data-url="http://cheal3.github.io/2020/09/09/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/" data-id="ckf3dt5or000nw0v47ahzhuux" class="article-share-link">공유</a>
       
       
     </footer>
@@ -396,9 +338,9 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
 
 
   
-    <article id="post-react express 연동/react express 연동3" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-쓰레기통/react express 연동/react express 연동3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%993/" class="article-date">
+    <a href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%993/" class="article-date">
   <time datetime="2020-09-08T07:17:44.000Z" itemprop="datePublished">2020-09-08</time>
 </a>
     
@@ -414,7 +356,7 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%993/">React x Express 연동하여 데이터 전송하기(3)</a>
+      <a class="article-title" href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%993/">React x Express 연동하여 데이터 전송하기(3)</a>
     </h1>
   
 
@@ -466,7 +408,7 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%993/" data-id="ckf3cla850006l4v4396rh0ys" class="article-share-link">공유</a>
+      <a data-url="http://cheal3.github.io/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%993/" data-id="ckf3rbu1n0019w0v45czf46rs" class="article-share-link">공유</a>
       
       
     </footer>
@@ -476,9 +418,9 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
 
 
   
-    <article id="post-react express 연동/react express 연동2" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-쓰레기통/react express 연동/react express 연동2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%992/" class="article-date">
+    <a href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%992/" class="article-date">
   <time datetime="2020-09-08T05:11:55.000Z" itemprop="datePublished">2020-09-08</time>
 </a>
     
@@ -494,7 +436,7 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%992/">React x Express 연동하여 데이터 전송하기(2)</a>
+      <a class="article-title" href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%992/">React x Express 연동하여 데이터 전송하기(2)</a>
     </h1>
   
 
@@ -582,7 +524,7 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%992/" data-id="ckf3cla830004l4v458bnbufm" class="article-share-link">공유</a>
+      <a data-url="http://cheal3.github.io/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%992/" data-id="ckf3rbu1s001ew0v44x9kclis" class="article-share-link">공유</a>
       
       
     </footer>
@@ -592,9 +534,9 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
 
 
   
-    <article id="post-react express 연동/react express 연동" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-쓰레기통/react express 연동/react express 연동" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%99/" class="article-date">
+    <a href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%99/" class="article-date">
   <time datetime="2020-09-08T02:09:25.000Z" itemprop="datePublished">2020-09-08</time>
 </a>
     
@@ -610,7 +552,7 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%99/">React x Express 연동하여 데이터 전송하기</a>
+      <a class="article-title" href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%99/">React x Express 연동하여 데이터 전송하기</a>
     </h1>
   
 
@@ -701,7 +643,7 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/08/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%99/" data-id="ckf3cla7y0001l4v4cdgr3byg" class="article-share-link">공유</a>
+      <a data-url="http://cheal3.github.io/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%99/" data-id="ckf3rbu1f0018w0v4aydt4bu5" class="article-share-link">공유</a>
       
       
     </footer>
@@ -711,14 +653,14 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
 
 
   
-    <article id="post-고객관리예제 공부/project-13" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-쓰레기통/고객관리예제 공부/project-13" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/09/04/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-13/" class="article-date">
+    <a href="/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-13/" class="article-date">
   <time datetime="2020-09-04T05:58:49.000Z" itemprop="datePublished">2020-09-04</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/React-Node-js/">React + Node.js</a>
+    <a class="article-category-link" href="/categories/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/">쓰레기통</a>
   </div>
 
   </div>
@@ -729,7 +671,7 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/04/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-13/">React와 Node.js로 만드는 고객 관리 시스템 개발-13</a>
+      <a class="article-title" href="/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-13/">React와 Node.js로 만드는 고객 관리 시스템 개발-13</a>
     </h1>
   
 
@@ -761,7 +703,7 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/04/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-13/" data-id="ckf3cla8d000cl4v4g00r3wcq" class="article-share-link">공유</a>
+      <a data-url="http://cheal3.github.io/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-13/" data-id="ckf3dt5oc0005w0v4ao452t02" class="article-share-link">공유</a>
       
       
     </footer>
@@ -771,14 +713,14 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
 
 
   
-    <article id="post-고객관리예제 공부/project-12" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-쓰레기통/고객관리예제 공부/project-12" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/09/04/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-12/" class="article-date">
+    <a href="/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-12/" class="article-date">
   <time datetime="2020-09-04T05:15:21.000Z" itemprop="datePublished">2020-09-04</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/React-Node-js/">React + Node.js</a>
+    <a class="article-category-link" href="/categories/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/">쓰레기통</a>
   </div>
 
   </div>
@@ -789,7 +731,7 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/04/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-12/">React와 Node.js로 만드는 고객 관리 시스템 개발-12</a>
+      <a class="article-title" href="/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-12/">React와 Node.js로 만드는 고객 관리 시스템 개발-12</a>
     </h1>
   
 
@@ -831,7 +773,158 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/04/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-12/" data-id="ckf3cla8b000bl4v4emx58q4v" class="article-share-link">공유</a>
+      <a data-url="http://cheal3.github.io/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-12/" data-id="ckf3dt5ob0004w0v4aqnwa9hz" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-쓰레기통/고객관리예제 공부/project-11" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-11/" class="article-date">
+  <time datetime="2020-09-04T02:45:45.000Z" itemprop="datePublished">2020-09-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/">쓰레기통</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-11/">React와 Node.js로 만드는 고객 관리 시스템 개발-11</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="고객-추가-양식-구현하기"><a href="#고객-추가-양식-구현하기" class="headerlink" title="고객 추가 양식 구현하기"></a>고객 추가 양식 구현하기</h1><p>React에서 <em>Form</em> 을 처리하기 위해서는 <em>Event Handling</em> 을 수행해야 한다. 이번에는 서버로 고객 데이터를 전송하여 데이터베이스에 신규 고객 정보를 등록하는 방법을 알아보자.</p>
+<p>먼저 React 클라이언트의 components 폴더에 <code>CustomerAdd.js</code> 를 만들자.</p>
+<p>그 다음 서버와의 통신 목적의 라이브러리 <strong>axios</strong> 를 설치해 주자. client 폴더로 이동하여 아래와 같이 입력해주자</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save axios</span><br></pre></td></tr></table></figure>
+
+
+
+<p>그 다음 <code>CustomerAdd.js</code> 를 작업해 주자.</p>
+<figure class="highlight javascript"><figcaption><span>CustomerAdd.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123;post&#125; <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomerAdd</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.state= &#123;</span><br><span class="line">      file:<span class="literal">null</span>,</span><br><span class="line">      userName:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      birthday:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      gender: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      job: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      fileName:<span class="string">&#x27;&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">this</span>.handleFormSubmit = <span class="built_in">this</span>.handleFormSubmit.bind(<span class="built_in">this</span>)</span><br><span class="line">    <span class="built_in">this</span>.handleFileChange = <span class="built_in">this</span>.handleFileChange.bind(<span class="built_in">this</span>)</span><br><span class="line">    <span class="built_in">this</span>.handleValueChange = <span class="built_in">this</span>.handleValueChange.bind(<span class="built_in">this</span>)</span><br><span class="line">    <span class="built_in">this</span>.addCustomer = <span class="built_in">this</span>.addCustomer.bind(<span class="built_in">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleFormSubmit(e)&#123;</span><br><span class="line">    e.preventDefault()</span><br><span class="line">    <span class="built_in">this</span>.addCustomer()</span><br><span class="line">    .then(<span class="function">(<span class="params">response</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(response.data);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleFileChange(e)&#123;</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      file: e.target.files[<span class="number">0</span>],</span><br><span class="line">      fileName: e.target.value</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  handleValueChange(e)&#123;</span><br><span class="line">    <span class="keyword">let</span> nextState =&#123;&#125;;</span><br><span class="line">    nextState[e.target.name] = e.target.value;</span><br><span class="line">    <span class="built_in">this</span>.setState(nextState);</span><br><span class="line">  &#125;</span><br><span class="line">  addCustomer()&#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">&#x27;/api/customers&#x27;</span>;</span><br><span class="line">    <span class="keyword">const</span> formData = <span class="keyword">new</span> FormData();</span><br><span class="line">    formData.append(<span class="string">&#x27;image&#x27;</span>,<span class="built_in">this</span>.state.file)</span><br><span class="line">    formData.append(<span class="string">&#x27;name&#x27;</span>,<span class="built_in">this</span>.state.userName)</span><br><span class="line">    formData.append(<span class="string">&#x27;birthday&#x27;</span>,<span class="built_in">this</span>.state.birthday)</span><br><span class="line">    formData.append(<span class="string">&#x27;gender&#x27;</span>,<span class="built_in">this</span>.state.gender)</span><br><span class="line">    formData.append(<span class="string">&#x27;job&#x27;</span>,<span class="built_in">this</span>.state.job)</span><br><span class="line">    <span class="keyword">const</span> config = &#123;</span><br><span class="line">      headers: &#123;</span><br><span class="line">        <span class="string">&#x27;content-type&#x27;</span>: <span class="string">&#x27;multipart/form-data&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> post(url,formData,config)</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line"></span><br><span class="line">      &lt;form onSubmit=&#123;<span class="built_in">this</span>.handleFormSubmit&#125;&gt;</span><br><span class="line"></span><br><span class="line">      &lt;h1&gt;고객 추가&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">      프로필 이미지: <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">name</span>=<span class="string">&quot;file&quot;</span> <span class="attr">file</span>=<span class="string">&#123;this.state.file&#125;</span> <span class="attr">value</span>=<span class="string">&#123;this.state.fileName&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;this.handleFileChange&#125;</span> /&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line"></span><br><span class="line">      이름: <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;userName&quot;</span> <span class="attr">value</span>=<span class="string">&#123;this.state.userName&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;this.handleValueChange&#125;</span> /&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line"></span><br><span class="line">      생년월일: <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;birthday&quot;</span> <span class="attr">value</span>=<span class="string">&#123;this.state.birthday&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;this.handleValueChange&#125;</span> /&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line"></span><br><span class="line">      성별: <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;gender&quot;</span> <span class="attr">value</span>=<span class="string">&#123;this.state.gender&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;this.handleValueChange&#125;</span> /&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line"></span><br><span class="line">      직업: <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;job&quot;</span> <span class="attr">value</span>=<span class="string">&#123;this.state.job&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;this.handleValueChange&#125;</span> /&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line"></span><br><span class="line">      &lt;button type=<span class="string">&quot;submit&quot;</span>&gt;추가하기&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">      &lt;/form&gt;</span><br><span class="line"></span><br><span class="line">      )</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> CustomerAdd</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>그 다음 <code>App.js</code> 를 작업해 주자. CustomerAdd 컴포넌트를 화면에 출력하기 위해서 CustomerAdd를 import 해주고</p>
+<figure class="highlight javascript"><figcaption><span>CustomerAdd.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> CustomerAdd <span class="keyword">from</span> <span class="string">&#x27;./components/CustomerAdd&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>  
+
+
+
+<p>render 부분을 다음과 같이 바꿔주자</p>
+<figure class="highlight javascript"><figcaption><span>CustomerAdd.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;Paper className = &#123;classes.root&#125;&gt;</span><br><span class="line">      &lt;Table className = &#123;classes.table&#125;&gt;</span><br><span class="line">        &lt;TableHead&gt;</span><br><span class="line">          &lt;TableRow&gt;</span><br><span class="line">            &lt;TableCell&gt; 번호 &lt;/TableCell&gt;</span><br><span class="line">            &lt;TableCell&gt; 이미지 &lt;/TableCell&gt;</span><br><span class="line">            &lt;TableCell&gt; 이름 &lt;/TableCell&gt;</span><br><span class="line">            &lt;TableCell&gt; 생년월일 &lt;/TableCell&gt;</span><br><span class="line">            &lt;TableCell&gt; 성별 &lt;/TableCell&gt;</span><br><span class="line">            &lt;TableCell&gt; 직업 &lt;/TableCell&gt;</span><br><span class="line">          &lt;/TableRow&gt;</span><br><span class="line">        &lt;/TableHead&gt;</span><br><span class="line">        &lt;TableBody&gt;</span><br><span class="line">        &#123;<span class="built_in">this</span>.state.customers ? <span class="built_in">this</span>.state.customers.map(<span class="function"><span class="params">c</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Customer</span> <span class="attr">key</span>=<span class="string">&#123;c.id&#125;</span> <span class="attr">id</span>=<span class="string">&#123;c.id&#125;</span> <span class="attr">image</span>=<span class="string">&#123;c.image&#125;</span> <span class="attr">name</span>=<span class="string">&#123;c.name&#125;</span> <span class="attr">birthday</span>=<span class="string">&#123;c.birthday&#125;</span> <span class="attr">gender</span>=<span class="string">&#123;c.gender&#125;</span> <span class="attr">job</span>=<span class="string">&#123;c.job&#125;</span> /&gt;</span></span></span><br><span class="line">          &#125;) : <span class="string">&#x27;&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">        &lt;/TableBody&gt;</span><br><span class="line">    &lt;/Table&gt;</span><br><span class="line">  &lt;/Paper&gt;</span><br><span class="line">  &lt;CustomerAdd/&gt;</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>  
+
+<p>그러면 다음과 같은 입력창이 생기는데 추가하기를 눌러주면 서버로 전송되는 것을 확인 할 수 있다.  </p>
+<p><strong>결과 화면</strong></p>
+<p><img src="/img/11%EA%B2%B0%EA%B3%BC.png">    </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-11/" data-id="ckf3dt5o90003w0v4bfoa8khp" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-쓰레기통/고객관리예제 공부/project-10" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-10/" class="article-date">
+  <time datetime="2020-09-04T01:56:22.000Z" itemprop="datePublished">2020-09-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/">쓰레기통</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-10/">React와 Node.js로 만드는 고객 관리 시스템 개발-10</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="AWS-RDS-서비스를-이용한-DB-연동"><a href="#AWS-RDS-서비스를-이용한-DB-연동" class="headerlink" title="AWS RDS 서비스를 이용한  DB 연동"></a>AWS RDS 서비스를 이용한  DB 연동</h1><p>AWS RDS로 데이터 베이스 만들어 보자</p>
+<p><img src="/img/10RDS.png">    </p>
+<p><img src="/img/10RDS2.png">  </p>
+<p><img src="/img/10RDS3.png">  </p>
+<h2>MySQL Workbench</h2>
+
+<p>위에까지 하다가 오류가 발생해서 AWS 설정을 바꿨는데 이게 굉장히 오래 걸려서 중간에 잘려먹었다.  퍼블릭 액세스를 아니오 라고 설정했던 것이 원인이었는데 예로 변경하였더니 정상 작동하였다.</p>
+<p>Workbench와 연동하는 방법은 엔드포인트 주소를 호스트에 입력하고 데이터베이스를 생성할 때 설정했던 ID 와 비밀번호를 쳐서 연동하면 된다.</p>
+<p>연동이 되면 새로운 스키마를 작성하고 다음과 같이 고객 테이블을 구축하자.</p>
+<figure class="highlight sql"><figcaption><span>reactexample</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">USE</span> reactexample;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> CUSTOMER (</span><br><span class="line"></span><br><span class="line">	<span class="keyword">id</span> <span class="built_in">INT</span> PRIMARY <span class="keyword">KEY</span> AUTO_INCREMENT,</span><br><span class="line"></span><br><span class="line">	image <span class="built_in">VARCHAR</span>(<span class="number">1024</span>),</span><br><span class="line"></span><br><span class="line">	<span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">64</span>),</span><br><span class="line"></span><br><span class="line">	birthday <span class="built_in">VARCHAR</span>(<span class="number">64</span>),</span><br><span class="line"></span><br><span class="line">	gender <span class="built_in">VARCHAR</span>(<span class="number">64</span>),</span><br><span class="line"></span><br><span class="line">	job <span class="built_in">VARCHAR</span>(<span class="number">64</span>)</span><br><span class="line"></span><br><span class="line">) <span class="keyword">DEFAULT</span> <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8 <span class="keyword">COLLATE</span> utf8_general_ci;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> CUSTOMER <span class="keyword">VALUES</span> (</span><br><span class="line">	<span class="number">1</span>,</span><br><span class="line">    <span class="string">&#x27;https://placeimg.com/64/64/any&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;염소&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;031223&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;여자&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;대학생&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> CUSTOMER <span class="keyword">VALUES</span> (</span><br><span class="line">	<span class="number">2</span>,</span><br><span class="line">    <span class="string">&#x27;https://placeimg.com/64/64/2&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;최동욱&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;951211&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;남자&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;인턴&#x27;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">INSERT</span> <span class="keyword">INTO</span> CUSTOMER <span class="keyword">VALUES</span> (</span><br><span class="line">	<span class="number">3</span>,</span><br><span class="line">    <span class="string">&#x27;https://placeimg.com/64/64/3CUSTOMER&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;털보&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;961127&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;남자&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;개&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><strong>결과 화면</strong></p>
+<p><img src="/img/10%EA%B2%B0%EA%B3%BC.png">  </p>
+<h2>gitignore</h2>
+
+<p>데이터베이스 관련 정보가 깃허브에 올라가지 않도록 서버 쪽 <code>.gitignore</code> 파일을 수정하자</p>
+<figure class="highlight plain"><figcaption><span>.gitignore</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># database</span><br><span class="line">&#x2F;database.json</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<p>이후에 database.json 에서 데이터베이스 정보를 설정하면 된다</p>
+<figure class="highlight json"><figcaption><span>database.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;host&quot;</span>: 데이터베이스 주소,</span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;user&quot;</span>: 데이터베이스 사용자,</span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;password&quot;</span>: 데이터베이스 비밀번호,</span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;port&quot;</span>: <span class="string">&quot;3306&quot;</span>,</span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;database&quot;</span>: 데이터베이스 이름</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2>Node.js와 MySQL 연동하기</h2>
+
+<p>먼저 NPM을 통해서 MySQL 라이브러리를 설치하자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -S mysql</span><br></pre></td></tr></table></figure>
+
+
+
+<p>설치된 MySQL 라이브러리를 활용해서 연동이 가능하다.</p>
+<figure class="highlight javascript"><figcaption><span>server.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="keyword">const</span> port = process.env.PORT || <span class="number">5000</span>;</span><br><span class="line">app.use(bodyParser.json());</span><br><span class="line">app.use(bodyParser.urlencoded(&#123;<span class="attr">extended</span>: <span class="literal">true</span>&#125;));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> data = fs.readFileSync(<span class="string">&#x27;./database.json&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> conf = <span class="built_in">JSON</span>.parse(data);</span><br><span class="line"><span class="keyword">const</span> mysql = <span class="built_in">require</span>(<span class="string">&#x27;mysql&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> connection = mysql.createConnection(&#123;</span><br><span class="line">  host : conf.host,</span><br><span class="line">  user : conf.user,</span><br><span class="line">  password: conf.password,</span><br><span class="line">  port : conf.port,</span><br><span class="line">  database: conf.database</span><br><span class="line">&#125;);</span><br><span class="line">connection.connect();</span><br><span class="line">app.get(<span class="string">&#x27;/api/customers/&#x27;</span>, <span class="function">(<span class="params">req,res</span>) =&gt;</span>&#123;</span><br><span class="line">  connection.query(</span><br><span class="line">    <span class="string">&#x27;SELECT * FROM CUSTOMER&#x27;</span>,</span><br><span class="line">    (err , rows, fields) =&gt; &#123;</span><br><span class="line">      res.send(rows);</span><br><span class="line">    &#125;</span><br><span class="line">  )</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(port, <span class="function">() =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`Listening on port <span class="subst">$&#123;port&#125;</span>`</span>));</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>CORS 라는 것도 있는데 도메인 또는 포트가 다른 서버의 자원을 요청하는 매커니즘이다. 서버를 8000번 포트 , REACT를 3000번 포트에서 실행하면 발생하거나 , 이미지를 저장하는 서버와 접속하는 서버가 다른 경우이다.</p>
+</blockquote>
+<p><strong>결과 화면</strong></p>
+<p><img src="/img/10%EA%B2%B0%EA%B3%BC2.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-10/" data-id="ckf3dt5nw0001w0v43swrdyof" class="article-share-link">공유</a>
       
       
     </footer>
@@ -856,7 +949,7 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
   <div class="widget-wrap">
     <h3 class="widget-title">카테고리</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Test/">Test</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%82%AC%EC%A7%84/">사진</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-Node-js/">React + Node.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/%EC%9B%B9/">웹</a></li></ul></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/">쓰레기통</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/React/">React</a></li></ul></li></ul></li></ul>
     </div>
   </div>
 
@@ -884,11 +977,7 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
       <ul>
         
           <li>
-            <a href="/2020/09/15/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">푸시알림</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">(no title)</a>
+            <a href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">기획) 기능정의</a>
           </li>
         
           <li>
@@ -896,11 +985,15 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
           </li>
         
           <li>
-            <a href="/2020/09/10/%EC%82%AC%EC%A7%84/%ED%85%8C%EC%8A%A4%ED%8A%B8/">화질테스트</a>
+            <a href="/2020/09/09/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/">브라우저는 어떻게 작동하는가??</a>
           </li>
         
           <li>
-            <a href="/2020/09/09/%EA%B3%B5%EB%B6%80/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/">브라우저는 어떻게 작동하는가??</a>
+            <a href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%993/">React x Express 연동하여 데이터 전송하기(3)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%992/">React x Express 연동하여 데이터 전송하기(2)</a>
           </li>
         
       </ul>

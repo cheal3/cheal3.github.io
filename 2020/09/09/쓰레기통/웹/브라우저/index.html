@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>브라우저는 어떻게 작동하는가?? | Choi Dong Wook blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="브라우저브라우저의 정의를 먼저 살펴보면   브라우저는  인터넷에서 웹서버의 모든 정보를 볼 수 있게 해줄 뿐 아니라, 하이퍼텍스트 문서 검색을 도와주는 응용 프로그램이다   브라우저의 기능브라우저의 주요 기능은 위에서 말했듯 사용자가 선택한 자원을 서버에 요청하고 브라우저에 표시하는 것이다.  자원의 주소는 URI(uniform Resource Id">
+<meta property="og:type" content="article">
+<meta property="og:title" content="브라우저는 어떻게 작동하는가??">
+<meta property="og:url" content="http://cheal3.github.io/2020/09/09/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/index.html">
+<meta property="og:site_name" content="Choi Dong Wook blog">
+<meta property="og:description" content="브라우저브라우저의 정의를 먼저 살펴보면   브라우저는  인터넷에서 웹서버의 모든 정보를 볼 수 있게 해줄 뿐 아니라, 하이퍼텍스트 문서 검색을 도와주는 응용 프로그램이다   브라우저의 기능브라우저의 주요 기능은 위에서 말했듯 사용자가 선택한 자원을 서버에 요청하고 브라우저에 표시하는 것이다.  자원의 주소는 URI(uniform Resource Id">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="http://cheal3.github.io/img/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B5%AC%EC%A1%B0.png">
+<meta property="og:image" content="http://cheal3.github.io/img/%EB%A0%8C%EB%8D%94%EB%A7%81%EC%97%94%EC%A7%84%EB%8F%99%EC%9E%91.png">
+<meta property="og:image" content="http://cheal3.github.io/img/%EB%8F%99%EC%9E%91%EA%B3%BC%EC%A0%95.png">
+<meta property="article:published_time" content="2020-09-09T06:48:52.000Z">
+<meta property="article:modified_time" content="2020-09-15T03:11:12.464Z">
+<meta property="article:author" content="cheal3@naver.com">
+<meta property="article:tag" content="IT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cheal3.github.io/img/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B5%AC%EC%A1%B0.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Choi Dong Wook blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Choi Dong Wook blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="검색"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://cheal3.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-쓰레기통/웹/브라우저" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/09/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/" class="article-date">
+  <time datetime="2020-09-09T06:48:52.000Z" itemprop="datePublished">2020-09-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/">쓰레기통</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      브라우저는 어떻게 작동하는가??
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <br/>
+
+
+
+<h1 id="브라우저"><a href="#브라우저" class="headerlink" title="브라우저"></a>브라우저</h1><p><code>브라우저</code>의 정의를 먼저 살펴보면  <br/></p>
+<p>브라우저는  인터넷에서 웹서버의 모든 정보를 볼 수 있게 해줄 뿐 아니라, 하이퍼텍스트 문서 검색을 도와주는 응용 프로그램이다</p>
+<br/>
+
+<h1 id="브라우저의-기능"><a href="#브라우저의-기능" class="headerlink" title="브라우저의 기능"></a>브라우저의 기능</h1><p>브라우저의 주요 기능은 위에서 말했듯 사용자가 선택한 자원을 서버에 요청하고 브라우저에 표시하는 것이다.  자원의 주소는 <strong>URI(uniform Resource Identifier)</strong> 에 의해 정해진다.</p>
+<p>브라우저는 HTML과 CSS의 명세에 따라 HTML 파일을 해석해서 표시하는데 이 명세는 W3C(World WIde Web Consortium)에서 정한다.  과거에는 브라우저들이 명세에 따라 구현하고 독자적인 방법으 로 확장함으로써 심각한 호환성 문제를 겪었지만 최근에는 대부분의 브라우저가 표준 명세를 따른다.</p>
+<blockquote>
+<p>URI : 통합 자원 식별자 하위 개념으로 URL , URN이 있다.</p>
+<blockquote>
+<p>URL (Uniform Resource Locator) : 서버들 있는 파일의 위치를 표시하는 방식</p>
+<p>URN (Uniform Resource Name) : 위치와 상관없이 리소스의 이름을 이용해서 접근하는 방식</p>
+<p>ex )  dmn.tld/page.htm</p>
+</blockquote>
+<p>ex) <a target="_blank" rel="noopener" href="http://test.com/test.pdf?docid=111">http://test.com/test.pdf?docid=111</a> 를 URI라고 하고 <a target="_blank" rel="noopener" href="http://test.com/test.pdf">http://test.com/test.pdf</a> 가 URL 이다.</p>
+</blockquote>
+<br/>
+
+
+
+<h1 id="브라우저의-구조"><a href="#브라우저의-구조" class="headerlink" title="브라우저의 구조"></a>브라우저의 구조</h1><p>브라우저의 주요 구성 요소는 다음과 같다</p>
+<br/>
+
+<p><img src="/img/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EA%B5%AC%EC%A1%B0.png">  </p>
+<ol>
+<li>사용자 인터페이스 : 주소 표시줄 , 이전 / 다음 버튼 북마크 메뉴 등 , 요청한 페이지를 보여주는 창을 제외한 나머지 부분</li>
+<li>브라우저 엔진 : 사용자 인터페이스와 렌더링 엔진 사이의 동작을 제어</li>
+<li>렌더링 엔진 : 요청한 콘텐츠를 표시 HTML을 요청하면 HTML과 CSS를 파싱하여 화면에 표시함</li>
+<li>통신 : HTTP요청과 같은 네트워크 호출에 사용</li>
+<li>자바스크립트 해석기 : 자바스크립트 코드를 해석하고 실행</li>
+<li>UI 백엔드 :  콤보 박스와 창 같은 기본적인 장치를 그림</li>
+<li>자료 저장소 : 자료 저장소 . 쿠키를 저장하는 것과 같이 모든 종류의 자원을 하드 디스크에 저장</li>
+</ol>
+<br/>
+
+<h1 id="렌더링-엔진"><a href="#렌더링-엔진" class="headerlink" title="렌더링 엔진"></a>렌더링 엔진</h1><p>렌더링 엔진의 역할은 요청 받은 내용을 브라우저 화면에 표시하는것이다. HTML 이나 XML 문서, 이미지를 표시할 수 있지만 확장 기능을 통하면 PDF같은 다른 유형도 표시할 수 있다.  </p>
+<p>크롬은 대부분의 브라우저와 달리 각 탭마다 별도의 렌더링 엔진 인스턴스를 유지한다. (각 탭은 독립된 프로세스로 처리)</p>
+<h5> 동작 과정 </h5>
+
+<p>렌더링 엔진은 통신으로부터 요청한 문서의 내용을 얻는 것으로 시작하는데 문서의 내용은 보통 8KB 단위로 전송된다.</p>
+<p><img src="/img/%EB%A0%8C%EB%8D%94%EB%A7%81%EC%97%94%EC%A7%84%EB%8F%99%EC%9E%91.png">  </p>
+<br/>
+
+<p>우선 렌더링 엔진은 HTML문서를 파싱하고 <code>DOM 노드</code> 로 변환한다. 그 다음 외부 CSS파일과 함께 포함된 스타일 요소도 파싱한다.  스타일 정보와 DOM트리는 <code>렌더 트리</code> 라고 부르는 또 다른 트리를 생성한다.</p>
+<br/>
+
+<p>렌더 트리는 색상 또는 면적과 같은 시각적 속성이 있는 사각형을 포함하고 있는데, 정해진 순서대로 화면에 표시된다.</p>
+<br/>
+
+<p>렌더 트리 생성이 끝나면 배치가 시작되는데 이것은 각 노드가 화면의 정확한 위치에 표시되는 것을 의미한다. 다음은 UI 백엔드에서 렌더 트리의 각 노드를 가로지르며 형상을 만들어 내는 그리기 과정이다.</p>
+<p><img src="/img/%EB%8F%99%EC%9E%91%EA%B3%BC%EC%A0%95.png"></p>
+<blockquote>
+<p>그림은 크롬의 렌더링엔진인 웹킷(Webkit)의 동작 과정이다.</p>
+</blockquote>
+<br/>
+
+<p>일련의 과정들이 점진적으로 진행된다는 것이 중요하다. 렌더링 엔진은 좀 더 나은 사용자 경험을 위해 가능하면 빠르게 내용을 표시하는데 모든 HTML을 파싱할 때까지 기다리지 않고 배치와 그리기 과정을 시작한다. 네트워크로부터 나머지 내용이 전송되면 동시에 받은 내용의 일부를 먼저 화면에 표시하는 것이다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/09/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/" data-id="ckf3dt5or000nw0v47ahzhuux" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">최신</strong>
+      <div class="article-nav-title">
+        
+          Do it! 리액트 프로그래밍 1일차
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%993/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">이전</strong>
+      <div class="article-nav-title">React x Express 연동하여 데이터 전송하기(3)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">카테고리</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/">쓰레기통</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/React/">React</a></li></ul></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">아카이브</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">9월 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">8월 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">최근 포스트</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">기획) 기능정의</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/09/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/">브라우저는 어떻게 작동하는가??</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%993/">React x Express 연동하여 데이터 전송하기(3)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%992/">React x Express 연동하여 데이터 전송하기(2)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 cheal3@naver.com<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
