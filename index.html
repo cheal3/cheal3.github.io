@@ -65,6 +65,93 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-업무/기능정의" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/16/%EC%97%85%EB%AC%B4/%EA%B8%B0%EB%8A%A5%EC%A0%95%EC%9D%98/" class="article-date">
+  <time datetime="2020-09-16T07:10:44.000Z" itemprop="datePublished">2020-09-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/%EC%97%85%EB%AC%B4/">업무</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/16/%EC%97%85%EB%AC%B4/%EA%B8%B0%EB%8A%A5%EC%A0%95%EC%9D%98/">기술 정의</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="FAB"><a href="#FAB" class="headerlink" title="FAB"></a>FAB</h1><h2>FAB (Floating Action Button)</h2>
+
+<br/>
+
+<h4>사용 정의</h4>
+화면상에 떠 있는 버튼으로, 서비스 전체에서 공통적으로 사용 될 수 있는 기능을 호출할 수 있다.
+고정 상태의 버튼에 사용자의 액션(클릭, 터치)이 가해질 경우 애니메이션 효과가 가미된 지정된 이벤트가 발생한다.
+
+<br/>
+<br/>
+
+<h4>사용 정의</h4>
+CSS에서 position 속성값을 fixed로 설정하여 구현 가능 이후 디자인 적인 요소나 페이지 이동 이벤트 등을 연동시키는 방법으로 개발
+
+<br/>
+<br/>
+
+
+<h4>크기</h4>
+표준 버튼 : 56 x 56 dp  
+
+<p>미니 버튼 : 40 x 40 dp  </p>
+<p>버튼 내 아이콘 크기 : 24 x 24 dp  </p>
+<p><em>DP : 디바이스 독립 픽셀<br>DPI가 커질수록 픽셀 값을 비례로 늘려 언제나 같은 크기로 보여질 수 있게함</em></p>
+<br/>
+
+<h4>고려할 점</h4>
+긍정적인 액션을 위주로 직관적이고 구체적인 의미를 담은 아이콘을 사용하자!
+
+<br/>
+
+
+<hr>
+<h1 id="Spin-pic"><a href="#Spin-pic" class="headerlink" title="Spin pic"></a>Spin pic</h1><p>물체가 회전하는 느낌을 주는 사진 기술, 파노라마가 촬영자를 중심으로 배경을 촬영하는 기법이라면 Spin pic은 피사체를 중심으로 촬영자가 주위를 돌며 촬영하는 기법  JS이미지 뷰어(라이브러리 有)를 사용, 드래그시 이미지를 넘겨 객체가 회전하는 느낌을 주는 방식으로 구현</p>
+<br/>
+
+
+<p><strong>파노라마</strong><br><img src="/img/%ED%8C%8C%EB%85%B8%EB%9D%BC%EB%A7%88.PNG"><br><strong>SpinPic</strong><br><img src="/img/spinpic.PNG"><br><strong>결과</strong><br><img src="/img/ezgif.com-crop.gif"></p>
+<br/>
+
+<h4>고려할 점</h4>
+예시는 360도를 72프레임으로 촬영 ( 1장에 5도씩 커버)
+
+<p>800x800 픽셀 기준 72프레임  = 약 7.4MB</p>
+<p>용량이 클 수록 이미지가 로드되는 시간이 길기 때문에 고객이 떠날 가능성이 있음<br>=&gt;용량 최적화가 관건</p>
+<br/>
+<br/>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/16/%EC%97%85%EB%AC%B4/%EA%B8%B0%EB%8A%A5%EC%A0%95%EC%9D%98/" data-id="ckf52bv6a0007vcv431mz8iax" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-공부/잡공부/푸시알림" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/" class="article-date">
@@ -91,9 +178,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Spin-pic"><a href="#Spin-pic" class="headerlink" title="Spin pic"></a>Spin pic</h1><p>물체가 회전하는 느낌을 주는 사진 기술, 파노라마가 촬영자를 중심으로 배경을 촬영하는 기법이라면 Spin pic은 피사체를 중심으로 촬영자가 주위를 돌며 촬영하는 기법이다.<br><img src="/img/%ED%8C%8C%EB%85%B8%EB%9D%BC%EB%A7%88.PNG"></p>
-<p><img src="/img/spinpic.PNG"></p>
-<p>FCM은 앱의 키값을 식별하여 특정 스마트폰에 데이터를 전달할 수 있다. 사용자가 앱을 설치하고 알람설정에 동의하면 Instance ID에 해당하는 FCM 토큰을 얻을 수 있다. FCM 의 push 메시지는 앱의 고유한 키 값과 사용자들의 토큰을 통해 이루어진다.</p>
+        <p>FCM은 앱의 키값을 식별하여 특정 스마트폰에 데이터를 전달할 수 있다. 사용자가 앱을 설치하고 알람설정에 동의하면 Instance ID에 해당하는 FCM 토큰을 얻을 수 있다. FCM 의 push 메시지는 앱의 고유한 키 값과 사용자들의 토큰을 통해 이루어진다.</p>
 <p>푸시 메시지는 앱의 key값과 사용자 고유의 token 값이 있어야 보낼 수 있다.<br>사용자에게 푸시를 전송하기 위해서는</p>
 <ol>
 <li>유저 고유의 id 값으로 토큰을 생성하고 정보를 조회하는 Job 을 만들고</li>
@@ -831,71 +916,6 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
 
 
   
-    <article id="post-쓰레기통/고객관리예제 공부/project-11" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-11/" class="article-date">
-  <time datetime="2020-09-04T02:45:45.000Z" itemprop="datePublished">2020-09-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/">쓰레기통</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-11/">React와 Node.js로 만드는 고객 관리 시스템 개발-11</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="고객-추가-양식-구현하기"><a href="#고객-추가-양식-구현하기" class="headerlink" title="고객 추가 양식 구현하기"></a>고객 추가 양식 구현하기</h1><p>React에서 <em>Form</em> 을 처리하기 위해서는 <em>Event Handling</em> 을 수행해야 한다. 이번에는 서버로 고객 데이터를 전송하여 데이터베이스에 신규 고객 정보를 등록하는 방법을 알아보자.</p>
-<p>먼저 React 클라이언트의 components 폴더에 <code>CustomerAdd.js</code> 를 만들자.</p>
-<p>그 다음 서버와의 통신 목적의 라이브러리 <strong>axios</strong> 를 설치해 주자. client 폴더로 이동하여 아래와 같이 입력해주자</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save axios</span><br></pre></td></tr></table></figure>
-
-
-
-<p>그 다음 <code>CustomerAdd.js</code> 를 작업해 주자.</p>
-<figure class="highlight javascript"><figcaption><span>CustomerAdd.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123;post&#125; <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomerAdd</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.state= &#123;</span><br><span class="line">      file:<span class="literal">null</span>,</span><br><span class="line">      userName:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      birthday:<span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      gender: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      job: <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">      fileName:<span class="string">&#x27;&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">this</span>.handleFormSubmit = <span class="built_in">this</span>.handleFormSubmit.bind(<span class="built_in">this</span>)</span><br><span class="line">    <span class="built_in">this</span>.handleFileChange = <span class="built_in">this</span>.handleFileChange.bind(<span class="built_in">this</span>)</span><br><span class="line">    <span class="built_in">this</span>.handleValueChange = <span class="built_in">this</span>.handleValueChange.bind(<span class="built_in">this</span>)</span><br><span class="line">    <span class="built_in">this</span>.addCustomer = <span class="built_in">this</span>.addCustomer.bind(<span class="built_in">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleFormSubmit(e)&#123;</span><br><span class="line">    e.preventDefault()</span><br><span class="line">    <span class="built_in">this</span>.addCustomer()</span><br><span class="line">    .then(<span class="function">(<span class="params">response</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(response.data);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleFileChange(e)&#123;</span><br><span class="line">    <span class="built_in">this</span>.setState(&#123;</span><br><span class="line">      file: e.target.files[<span class="number">0</span>],</span><br><span class="line">      fileName: e.target.value</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  handleValueChange(e)&#123;</span><br><span class="line">    <span class="keyword">let</span> nextState =&#123;&#125;;</span><br><span class="line">    nextState[e.target.name] = e.target.value;</span><br><span class="line">    <span class="built_in">this</span>.setState(nextState);</span><br><span class="line">  &#125;</span><br><span class="line">  addCustomer()&#123;</span><br><span class="line">    <span class="keyword">const</span> url = <span class="string">&#x27;/api/customers&#x27;</span>;</span><br><span class="line">    <span class="keyword">const</span> formData = <span class="keyword">new</span> FormData();</span><br><span class="line">    formData.append(<span class="string">&#x27;image&#x27;</span>,<span class="built_in">this</span>.state.file)</span><br><span class="line">    formData.append(<span class="string">&#x27;name&#x27;</span>,<span class="built_in">this</span>.state.userName)</span><br><span class="line">    formData.append(<span class="string">&#x27;birthday&#x27;</span>,<span class="built_in">this</span>.state.birthday)</span><br><span class="line">    formData.append(<span class="string">&#x27;gender&#x27;</span>,<span class="built_in">this</span>.state.gender)</span><br><span class="line">    formData.append(<span class="string">&#x27;job&#x27;</span>,<span class="built_in">this</span>.state.job)</span><br><span class="line">    <span class="keyword">const</span> config = &#123;</span><br><span class="line">      headers: &#123;</span><br><span class="line">        <span class="string">&#x27;content-type&#x27;</span>: <span class="string">&#x27;multipart/form-data&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> post(url,formData,config)</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line"></span><br><span class="line">      &lt;form onSubmit=&#123;<span class="built_in">this</span>.handleFormSubmit&#125;&gt;</span><br><span class="line"></span><br><span class="line">      &lt;h1&gt;고객 추가&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">      프로필 이미지: <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;file&quot;</span> <span class="attr">name</span>=<span class="string">&quot;file&quot;</span> <span class="attr">file</span>=<span class="string">&#123;this.state.file&#125;</span> <span class="attr">value</span>=<span class="string">&#123;this.state.fileName&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;this.handleFileChange&#125;</span> /&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line"></span><br><span class="line">      이름: <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;userName&quot;</span> <span class="attr">value</span>=<span class="string">&#123;this.state.userName&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;this.handleValueChange&#125;</span> /&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line"></span><br><span class="line">      생년월일: <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;birthday&quot;</span> <span class="attr">value</span>=<span class="string">&#123;this.state.birthday&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;this.handleValueChange&#125;</span> /&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line"></span><br><span class="line">      성별: <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;gender&quot;</span> <span class="attr">value</span>=<span class="string">&#123;this.state.gender&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;this.handleValueChange&#125;</span> /&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line"></span><br><span class="line">      직업: <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;job&quot;</span> <span class="attr">value</span>=<span class="string">&#123;this.state.job&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;this.handleValueChange&#125;</span> /&gt;</span></span><span class="xml"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span></span><br><span class="line"></span><br><span class="line">      &lt;button type=<span class="string">&quot;submit&quot;</span>&gt;추가하기&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">      &lt;/form&gt;</span><br><span class="line"></span><br><span class="line">      )</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> CustomerAdd</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>그 다음 <code>App.js</code> 를 작업해 주자. CustomerAdd 컴포넌트를 화면에 출력하기 위해서 CustomerAdd를 import 해주고</p>
-<figure class="highlight javascript"><figcaption><span>CustomerAdd.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> CustomerAdd <span class="keyword">from</span> <span class="string">&#x27;./components/CustomerAdd&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>  
-
-
-
-<p>render 부분을 다음과 같이 바꿔주자</p>
-<figure class="highlight javascript"><figcaption><span>CustomerAdd.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;Paper className = &#123;classes.root&#125;&gt;</span><br><span class="line">      &lt;Table className = &#123;classes.table&#125;&gt;</span><br><span class="line">        &lt;TableHead&gt;</span><br><span class="line">          &lt;TableRow&gt;</span><br><span class="line">            &lt;TableCell&gt; 번호 &lt;/TableCell&gt;</span><br><span class="line">            &lt;TableCell&gt; 이미지 &lt;/TableCell&gt;</span><br><span class="line">            &lt;TableCell&gt; 이름 &lt;/TableCell&gt;</span><br><span class="line">            &lt;TableCell&gt; 생년월일 &lt;/TableCell&gt;</span><br><span class="line">            &lt;TableCell&gt; 성별 &lt;/TableCell&gt;</span><br><span class="line">            &lt;TableCell&gt; 직업 &lt;/TableCell&gt;</span><br><span class="line">          &lt;/TableRow&gt;</span><br><span class="line">        &lt;/TableHead&gt;</span><br><span class="line">        &lt;TableBody&gt;</span><br><span class="line">        &#123;<span class="built_in">this</span>.state.customers ? <span class="built_in">this</span>.state.customers.map(<span class="function"><span class="params">c</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Customer</span> <span class="attr">key</span>=<span class="string">&#123;c.id&#125;</span> <span class="attr">id</span>=<span class="string">&#123;c.id&#125;</span> <span class="attr">image</span>=<span class="string">&#123;c.image&#125;</span> <span class="attr">name</span>=<span class="string">&#123;c.name&#125;</span> <span class="attr">birthday</span>=<span class="string">&#123;c.birthday&#125;</span> <span class="attr">gender</span>=<span class="string">&#123;c.gender&#125;</span> <span class="attr">job</span>=<span class="string">&#123;c.job&#125;</span> /&gt;</span></span></span><br><span class="line">          &#125;) : <span class="string">&#x27;&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">        &lt;/TableBody&gt;</span><br><span class="line">    &lt;/Table&gt;</span><br><span class="line">  &lt;/Paper&gt;</span><br><span class="line">  &lt;CustomerAdd/&gt;</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>  
-
-<p>그러면 다음과 같은 입력창이 생기는데 추가하기를 눌러주면 서버로 전송되는 것을 확인 할 수 있다.  </p>
-<p><strong>결과 화면</strong></p>
-<p><img src="/img/11%EA%B2%B0%EA%B3%BC.png">    </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-11/" data-id="ckf3rkxfn000bukv4gs4v2oih" class="article-share-link">공유</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
@@ -911,7 +931,7 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
   <div class="widget-wrap">
     <h3 class="widget-title">카테고리</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/">쓰레기통</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/React/">React</a></li></ul></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/">쓰레기통</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/React/">React</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%9D%B8%ED%84%B4/%EC%97%85%EB%AC%B4/">업무</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -939,6 +959,10 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
       <ul>
         
           <li>
+            <a href="/2020/09/16/%EC%97%85%EB%AC%B4/%EA%B8%B0%EB%8A%A5%EC%A0%95%EC%9D%98/">기술 정의</a>
+          </li>
+        
+          <li>
             <a href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">기획) 기능정의</a>
           </li>
         
@@ -952,10 +976,6 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
         
           <li>
             <a href="/2020/09/09/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%9B%B9/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80/">브라우저는 어떻게 작동하는가??</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%993/">React x Express 연동하여 데이터 전송하기(3)</a>
           </li>
         
       </ul>
