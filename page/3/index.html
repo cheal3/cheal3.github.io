@@ -65,6 +65,75 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-쓰레기통/고객관리예제 공부/project-4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/02/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-4/" class="article-date">
+  <time datetime="2020-09-02T09:15:20.000Z" itemprop="datePublished">2020-09-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/">쓰레기통</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/02/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-4/">React와 Node.js로 만드는 고객 관리 시스템 개발-4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="고객-컴포넌트-만들기"><a href="#고객-컴포넌트-만들기" class="headerlink" title="고객 컴포넌트 만들기"></a>고객 컴포넌트 만들기</h1><p>컴포넌트란 웹 문서에서 어떠한 내용을 보여주기 위한 기본적인 단위이다.</p>
+<p>고객 컴포넌트란 한 명의 고객에 대한 정보를 보여주기 위한 기능이라고 보면 되겠다.</p>
+<h2>Customer.js</h2>
+
+<p><code>src</code> 디렉터리 아래에 <code>components</code> 디렉터리를 만들고 <code>Customer.js</code> 컴포넌트를 생성해주자.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Customer.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Customer</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;염소&lt;/h2&gt;</span><br><span class="line">        &lt;p&gt;<span class="number">031223</span>&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;여자&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;대학생&lt;/p&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Customer;</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>export를 해줘야 컴포넌트를 분리하고 다른 컴포넌트에서 쓸 수 있다.</code></pre>
+<h2>App.js</h2>
+
+<p><code>App.js</code> 에서 방금 만든 Customer 컴포넌트를 사용해 보자</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> Customer <span class="keyword">from</span> <span class="string">&#x27;./components/Customer&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./App.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Customer/&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>다음과 같은 오류가 나왔는데 React는 오류가 발생하면 이렇게 나오는구나 신기했다.</p>
+<p><img src="/img/4%EC%98%A4%EB%A5%98.png"></p>
+<p>오류를 고쳐주면 다음과 같은 결과창이 나온다.</p>
+<p><strong>적용 결과</strong><br><img src="/img/4%EA%B2%B0%EA%B3%BC.png"></p>
+<h2>Props를 이용한 구조화</h2>
+
+<p>Props를 이용해서 <code>App.js</code> 에서 데이터를 가진 상태에서 고객에 대한 정보를 출력하도록 구조화 하자</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//App.js</span></span><br><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> Customer <span class="keyword">from</span> <span class="string">&#x27;./components/Customer&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./App.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> customer = &#123;</span><br><span class="line">  <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;염소&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;birthday&#x27;</span>:<span class="string">&#x27;031223&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;gender&#x27;</span>:<span class="string">&#x27;여자&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;job&#x27;</span>:<span class="string">&#x27;대학생&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Customer</span><br><span class="line">    name=&#123;customer.name&#125;</span><br><span class="line">    birthday=&#123;customer.birthday&#125;</span><br><span class="line">    gender=&#123;customer.gender&#125;</span><br><span class="line">    job=&#123;customer.job&#125;/&gt;</span><br><span class="line">  );</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>그런다음 <code>Customer.js</code> 에 가서 다음과 같이 코드를 수정하자</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Customer</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;&#123;<span class="built_in">this</span>.props.name&#125;&lt;/h2&gt;</span><br><span class="line">        &lt;p&gt;&#123;<span class="built_in">this</span>.props.birthday&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;<span class="built_in">this</span>.props.gender&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;<span class="built_in">this</span>.props.job&#125;&lt;/p&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Customer;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>확인해보면 결과는 동일한 것을 알 수 있다.<br><code>Customer.js</code>에 있는 형식에 <code>const = customer</code> 의 데이터를 넣은 것이라고 이해하면 될 것 같다.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/02/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-4/" data-id="ckf3rkxfv000iukv4cgowgcj2" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-쓰레기통/고객관리예제 공부/project-3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/09/02/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-3/" class="article-date">
@@ -839,60 +908,11 @@ print("코드는 pre  code 태그로 감싸주거나 ")
 
 
   
-    <article id="post-쓰레기통/초창기 막공부/hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/31/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/hello-world/" class="article-date">
-  <time datetime="2020-08-31T14:50:09.216Z" itemprop="datePublished">2020-08-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/31/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/08/31/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EC%B4%88%EC%B0%BD%EA%B8%B0%20%EB%A7%89%EA%B3%B5%EB%B6%80/hello-world/" data-id="ckf3rkxgi001fukv4hr5qbkc7" class="article-share-link">공유</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; 이전</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; 이전</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">다음 &amp;raquo;</a>
   </nav>
 
 </section>
@@ -931,7 +951,11 @@ print("코드는 pre  code 태그로 감싸주거나 ")
       <ul>
         
           <li>
-            <a href="/2020/09/28/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/2%EC%9D%BC%EC%B0%A8/">(no title)</a>
+            <a href="/2020/09/28/do%20it%20%EB%A6%AC%EC%95%A1%ED%8A%B8/%EC%97%90%EC%96%B4%EB%B9%84%EC%95%A4%EB%B9%841/">Do it! 리액트 프로그래밍 3일차</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/28/do%20it%20%EB%A6%AC%EC%95%A1%ED%8A%B8/2%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
           </li>
         
           <li>
@@ -944,10 +968,6 @@ print("코드는 pre  code 태그로 감싸주거나 ")
         
           <li>
             <a href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">기획) 기능정의</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
           </li>
         
       </ul>

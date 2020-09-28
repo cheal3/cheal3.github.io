@@ -65,15 +65,131 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-doit리액트/2일차" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-do it 리액트/에어비앤비1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/09/28/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/2%EC%9D%BC%EC%B0%A8/" class="article-date">
-  <time datetime="2020-09-28T05:20:54.683Z" itemprop="datePublished">2020-09-28</time>
+    <a href="/2020/09/28/do%20it%20%EB%A6%AC%EC%95%A1%ED%8A%B8/%EC%97%90%EC%96%B4%EB%B9%84%EC%95%A4%EB%B9%841/" class="article-date">
+  <time datetime="2020-09-28T08:40:04.000Z" itemprop="datePublished">2020-09-28</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/React/">React</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/28/do%20it%20%EB%A6%AC%EC%95%A1%ED%8A%B8/%EC%97%90%EC%96%B4%EB%B9%84%EC%95%A4%EB%B9%841/">Do it! 리액트 프로그래밍 3일차</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-비주얼-테스트로-더-쉽게-개발하기"><a href="#1-비주얼-테스트로-더-쉽게-개발하기" class="headerlink" title="1.비주얼 테스트로 더 쉽게 개발하기"></a>1.비주얼 테스트로 더 쉽게 개발하기</h1><p>웹사이트들은 상황에 따라 오류 메시지나 로딩 화면을 출력한다. 예를 들어 오류가 있거나 없을때 서로 다른 화면을 보여주어야 한다.</p>
+<p>그래서 에어비앤비에서는 스토리북이라는 <strong>비주얼 테스트</strong>를 위한 도구를 도입했다. 비주얼 테스트란 화면을 구성하는 컴포넌트들을 독립적으로 관리하고 변화를 살펴볼 수 있는 방법을 의미한다.</p>
+   <br/>
+
+<h3>스토리북 설치하고 사용해보기</h3>
+
+<p>시작하기 전에 03 폴더에 Input.jsx 파일을 작성하자</p>
+<figure class="highlight javascript"><figcaption><span>./src/03/Input.jsx</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">&#x27;prop-types&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Input</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.setRef = <span class="built_in">this</span>.setRef.bind(<span class="built_in">this</span>);</span><br><span class="line">    <span class="built_in">this</span>.handleChange = <span class="built_in">this</span>.handleChange.bind(<span class="built_in">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handleChange(e) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; name, onChage &#125; = <span class="built_in">this</span>.props;</span><br><span class="line">    <span class="keyword">if</span> (onChange) &#123;</span><br><span class="line">      onChage(name, e.target.value);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.props.autoFocus) &#123;</span><br><span class="line">      <span class="built_in">this</span>.refs.focus();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidUpdate() &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.props.autoFocus) &#123;</span><br><span class="line">      <span class="built_in">this</span>.refs.focus();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  setRef(ref) &#123;</span><br><span class="line">    <span class="built_in">this</span>.ref = ref;</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; errorMessage, label, name, value, type, onFocus &#125; = <span class="built_in">this</span>.props;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;label&gt;</span><br><span class="line">        &#123;label&#125;</span><br><span class="line">        &lt;input</span><br><span class="line">          id=&#123;<span class="string">`input_<span class="subst">$&#123;name&#125;</span>`</span>&#125;</span><br><span class="line">          ref=&#123;<span class="built_in">this</span>.setRef&#125;</span><br><span class="line">          onChange=&#123;<span class="built_in">this</span>.handleChange&#125;</span><br><span class="line">          onFocus=&#123;onFocus&#125;</span><br><span class="line">          value=&#123;value&#125;</span><br><span class="line">          type=&#123;type&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &#123;errorMessage &amp;&amp; <span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">classNae</span>=<span class="string">&quot;error&quot;</span>&gt;</span> &#123;errorMessage&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span>&#125;</span><br><span class="line">      &lt;/label&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">Input.propTypes = &#123;</span><br><span class="line">  type: PropTypes.oneOf([<span class="string">&#x27;text&#x27;</span>, <span class="string">&#x27;number&#x27;</span>, <span class="string">&#x27;price&#x27;</span>]),</span><br><span class="line">  name: PropTypes.string.isRequired,</span><br><span class="line">  value: PropTypes.oneOfType([PropTypes.number, PropTypes.stirng]),</span><br><span class="line">  errorMessage: PropTypes.string,</span><br><span class="line">  label: PropTypes.string,</span><br><span class="line">  onChange: PropTypes.func,</span><br><span class="line">  onFocus: PropTypes.func,</span><br><span class="line">  autoFocus: PropTypes.bool,</span><br><span class="line">&#125;;</span><br><span class="line">Input.defaultProps = &#123;</span><br><span class="line">  onChange: <span class="function">() =&gt;</span> &#123;&#125;,</span><br><span class="line">  onFoucs: <span class="function">() =&gt;</span> &#123;&#125;,</span><br><span class="line">  autoFocus: <span class="literal">false</span>,</span><br><span class="line">  type: <span class="string">&#x27;text&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Input;</span><br></pre></td></tr></table></figure>
+
+</br>
+
+<h5>1.스토리북 설치하기</h5>
+
+<p>yarn 으로 스토리북을 설치해 보자 프로젝트의 루트 폴더로 이동하여 다음 명령어를 입력하자</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add --dev @storybook&#x2F;react</span><br></pre></td></tr></table></figure>
+
+
+
+<h5>2.package.json에 스토리북 실행 명령어 추가하기</h5>
+
+<p>설치가 완료된 스토리북을 실행하기 위해서 package.json 에 노드 명령어를 추가한다.</p>
+<p>package.json의 scripts 블록은 npm 또는 yarn에서 실행할 명령어를 정의하는 곳이다.</p>
+<figure class="highlight"><figcaption><span>package.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;storybook&quot;: &quot;start-storybook -p 9001 -c .storybook&quot;,</span><br><span class="line">    &quot;start&quot;: &quot;react-scripts start&quot;,</span><br><span class="line">    &quot;build&quot;: &quot;react-scripts build&quot;,</span><br><span class="line">    &quot;test&quot;: &quot;react-scripts test&quot;,</span><br><span class="line">    &quot;eject&quot;: &quot;react-scripts eject&quot;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+   <br/>
+
+<h5>3.스토리 파일 만들기</h5>
+
+<p>스토리는 컴포넌트의 여러 출력 형태를 구성한 페이지이다. 여기서는 다양한 형태의 Input 컴포넌트를 가지는 Input 스토리를 만들어 보자 src 폴더에 stories 폴더를 만든 다음 스토리 파일을 생성하여 아래와 같이 입력하자</p>
+<figure class="highlight javascript"><figcaption><span>./src/stories/InputStory.jsx</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; storiesOf &#125; <span class="keyword">from</span> <span class="string">&#x27;@storybook/react&#x27;</span>; <span class="comment">// 스토리북 도구에 추가해주는 함수</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Input <span class="keyword">from</span> <span class="string">&#x27;../03/Input&#x27;</span>; <span class="comment">// Input 컴포넌트 임포트</span></span><br><span class="line"></span><br><span class="line">storiesOf(<span class="string">&#x27;Input&#x27;</span> , <span class="built_in">module</span>).add(<span class="string">&#x27;기본 설정&#x27;</span>, <span class="function">() =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">Input</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+
+   <br/>
+
+
+
+<h5>4.스토리북 config.js에 스토리 연결하기</h5>
+
+<p>과정 3에서 만든 스토리를 스토리북 config.js에 연결해 보자. 스토리를 스토리북에 연결하려면 프로젝트 루트 폴더에 ‘.storybook’ 라는 이름의 폴더가 필요하다.  .storybook 폴더를 만든 다음 config.js라는 이름의 설정 파일을 생성하여 저장하자.</p>
+<figure class="highlight javascript"><figcaption><span>./.storybook/config.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; configure &#125; <span class="keyword">from</span> <span class="string">&#x27;@storybook/react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadStories</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">require</span>(<span class="string">&#x27;../src/stories/InputStory&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">configure(loadStories, <span class="built_in">module</span>);</span><br></pre></td></tr></table></figure>
+
+   <br/>
+
+
+
+<h5>5.스토리북 실행하기</h5>
+
+<p>준비를 마치면 터미널에서 다음 명령어를 실행하자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn storybook</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/p156.png"></p>
+   <br/>
+
+<h5>6.스토리북 오류 메시지 수정하기</h5>
+
+<p>크롬 브라우저의 콘솔창을 보면 Input 컴포넌트의 필수 프로퍼티인 name이 없다는 오류 메시지가 나타난다. Input 스토리에서 add() 함수로 추가한 Input 컴포넌트에 name 프로퍼티를 추가하면 오류 메시지가 사라진다</p>
+<figure class="highlight javascript"><figcaption><span>.src/stories.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; storiesOf &#125; <span class="keyword">from</span> <span class="string">&#x27;@storybook/react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> Input <span class="keyword">from</span> <span class="string">&#x27;../03/Input&#x27;</span>;</span><br><span class="line"></span><br><span class="line">storiesOf(<span class="string">&#x27;Input&#x27;</span>, <span class="built_in">module</span>).add(<span class="string">&#x27;기본 설정&#x27;</span>, <span class="function">() =&gt;</span> <span class="xml"><span class="tag">&lt;<span class="name">Input</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> /&gt;</span></span>);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>~p157</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/28/do%20it%20%EB%A6%AC%EC%95%A1%ED%8A%B8/%EC%97%90%EC%96%B4%EB%B9%84%EC%95%A4%EB%B9%841/" data-id="ckfma16w1000594v49ro3g5er" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-do it 리액트/2일차" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/28/do%20it%20%EB%A6%AC%EC%95%A1%ED%8A%B8/2%EC%9D%BC%EC%B0%A8/" class="article-date">
+  <time datetime="2020-09-28T07:11:42.000Z" itemprop="datePublished">2020-09-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/">공부</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/%EA%B3%B5%EB%B6%80/React/">React</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/28/do%20it%20%EB%A6%AC%EC%95%A1%ED%8A%B8/2%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
+    </h1>
+  
+
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -211,7 +327,7 @@ PropComponent 컴포넌트의 프로퍼티로 전달한 문자열이 출력되�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/28/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/2%EC%9D%BC%EC%B0%A8/" data-id="ckfm49w0i00003sv41dltcsss" class="article-share-link">공유</a>
+      <a data-url="http://cheal3.github.io/2020/09/28/do%20it%20%EB%A6%AC%EC%95%A1%ED%8A%B8/2%EC%9D%BC%EC%B0%A8/" data-id="ckfma16w0000494v46uxg0crj" class="article-share-link">공유</a>
       
       
     </footer>
@@ -402,9 +518,9 @@ CSS에서 position 속성값을 fixed로 설정하여 구현 가능 이후 디�
 
 
   
-    <article id="post-doit리액트/1일차" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-do it 리액트/1일차" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/" class="article-date">
+    <a href="/2020/09/14/do%20it%20%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/" class="article-date">
   <time datetime="2020-09-14T02:43:22.000Z" itemprop="datePublished">2020-09-14</time>
 </a>
     
@@ -420,7 +536,7 @@ CSS에서 position 속성값을 fixed로 설정하여 구현 가능 이후 디�
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
+      <a class="article-title" href="/2020/09/14/do%20it%20%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
     </h1>
   
 
@@ -516,7 +632,7 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/" data-id="ckf3rkxfb0001ukv47bwy1wy2" class="article-share-link">공유</a>
+      <a data-url="http://cheal3.github.io/2020/09/14/do%20it%20%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/" data-id="ckfma16vq000094v4hk4icuiy" class="article-share-link">공유</a>
       
       
     </footer>
@@ -865,130 +981,11 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
 
 
   
-    <article id="post-쓰레기통/react express 연동/react express 연동" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%99/" class="article-date">
-  <time datetime="2020-09-08T02:09:25.000Z" itemprop="datePublished">2020-09-08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%99/">React x Express 연동하여 데이터 전송하기</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="React-x-Express-연동하기"><a href="#React-x-Express-연동하기" class="headerlink" title="React x Express 연동하기"></a>React x Express 연동하기</h1><p>우선 CRA를 통해 리액트 프로젝트를 시작하자.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app react_express</span><br><span class="line">cd react_express</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><strong>npx</strong>는 반복되지만 자주 쓰이는 형태 (보일러플레이트) 에 효과적이다   </p>
-<p> 최신버전에 해당하는 패키지를 설치하여 실행하고, 실행된 이후에 해당 패키지를 제거한다.  </p>
-</blockquote>
-<p>그럼 익숙한 창이 나온다.</p>
-<p><img src="/img/react%EC%97%B0%EB%8F%99.png">    </p>
-<p>  그런다음  src 아래에 있는 <code>App.js</code> 를 수정하자</p>
-<figure class="highlight javascript"><figcaption><span>App.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> logo <span class="keyword">from</span> <span class="string">&#x27;./logo.svg&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./App.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.state=&#123;</span><br><span class="line">      username:<span class="literal">null</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  render()&#123;</span><br><span class="line">      <span class="keyword">const</span> &#123;username&#125; = <span class="built_in">this</span>.state;</span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        &lt;div className=<span class="string">&quot;App&quot;</span>&gt;</span><br><span class="line">          &lt;header className=<span class="string">&quot;App-header&quot;</span>&gt;</span><br><span class="line">            &lt;img src=&#123;logo&#125; className=<span class="string">&quot;App-logo&quot;</span> alt=<span class="string">&quot;logo&quot;</span> /&gt;</span><br><span class="line">            &#123;username ? <span class="string">`Hello <span class="subst">$&#123;username&#125;</span>`</span> : <span class="string">&#x27;Hello World&#x27;</span>&#125;</span><br><span class="line">          &lt;/header&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"> 		 );</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>      
-
-
-
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username ? &#96;Hello $&#123;username&#125;&#96; : &#39;Hello World&#39;</span><br></pre></td></tr></table></figure>
-
-<p>에서  username 이 <code>null</code> 이기 때문에  <code>Hello world</code> 가 출력 됨은 자명하다. 그럼 이 username 을 express로 만든 서버에서 받아오도록 하자  </p>
-<p>서버쪽을 구현하기 위해 express를 설치해 주자</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm add express --save</span><br></pre></td></tr></table></figure>
-
-
-
-<p>json형식으로 데이터를 주고받기 위해 <code>body-parser</code>도 설치해준다</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install body-parser</span><br></pre></td></tr></table></figure>
-
-
-
-<p>root에서 servers라는 디렉터리를 만들고 <code>server.js</code>파일을 생성하고 다음과 같이 작성하자.</p>
-<figure class="highlight javascript"><figcaption><span>server.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="keyword">const</span> bodyParser =  <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> port = process.env.PORT || <span class="number">5000</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.use(bodyParser.json());</span><br><span class="line">app.use(<span class="string">&#x27;/api&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>   &#123;</span><br><span class="line">    res.json(&#123;<span class="attr">username</span>:<span class="string">&#x27;dongwook&#x27;</span>&#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(port , <span class="function">() =&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`express is running on <span class="subst">$&#123;port&#125;</span>`</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>     
-
-
-
-<p><code>localhost:5000/api</code>  에 접속해 주면 다음과 같은 결과가 나온다.</p>
-<p><img src="/img/react%EC%97%B0%EB%8F%992.png">    </p>
-<p>이제 client 쪽에서 이 데이터를 받아오게 하면 된다.</p>
-<p><code>App.js</code>에서 <code>componentDidMount()</code>를 추가한다.</p>
-<blockquote>
-<p><strong>React의 라이프 사이클</strong></p>
-<p>기본적으로 React 라이브러리가 처음 컴포넌트를 실행할 때는 다음순서를 따른다.</p>
-<ol>
-<li><p>constructor()</p>
-</li>
-<li><p>componentWillMount()</p>
-</li>
-<li><p>render()</p>
-</li>
-<li><p>componentDidMount()</p>
-<p>그리고 props혹은 state가 변경될 때는 shouldComponentUpdate() 함수 등이 사용되어 실질적으로 render 함수를 불러와 뷰를 갱신하게 된다. 또한 컴포넌트가 삭제될 때는 componentWillUnmount 함수가 실행된다.</p>
-<p>일반적으로 API를 불러와서 웹 사이트 화면에 특정한 뷰를 출력하고자 한다면 <code>componentDidMount()</code> 함수에서 API를 비동기적으로 호출하면 된다.</p>
-</li>
-</ol>
-</blockquote>
-<figure class="highlight javascript"><figcaption><span>App.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">componentDidMoint()&#123;</span><br><span class="line">	fetch(<span class="string">&#x27;http://localhost:5000/api&#x27;</span>)</span><br><span class="line">	.then(<span class="function"><span class="params">res</span> =&gt;</span> res.json())</span><br><span class="line">	.then(<span class="function"><span class="params">data</span> =&gt;</span> <span class="built_in">this</span>.setState(&#123;<span class="attr">username</span>: data.username&#125;));</span><br><span class="line">&#125;</span><br><span class="line">render()&#123;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>     
-
-
-
-
-
-<p>이제 클라이언트에서 접속을하고 개발자 도구의 console로 들어가 보면 다음과 같이 에러가 떠있다.</p>
-<p><img src="/img/react%EC%97%B0%EB%8F%993.png"></p>
-<p>CORS 정책에 의해서 다른 포트나 다른 도메인에서 온 요청을 허용하지 않는것인데 server.js에서 cors를 허용하는 방법으로 변경해 보자. 먼저 cors를 설치해주고</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install cors --save</span><br></pre></td></tr></table></figure>
-
-
-
-<p>  server.js에 다음 두 줄을 추가해주자.</p>
-<figure class="highlight javascript"><figcaption><span>server.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cors = <span class="built_in">require</span>(<span class="string">&#x27;cors&#x27;</span>);</span><br><span class="line"></span><br><span class="line">app.use(cors());</span><br></pre></td></tr></table></figure>       
-
-
-
-
-
-<p>그런 다음 서버를 재시작하면 제대로 데이터가 전달 된 것을 확인할 수 있다.</p>
-<p><img src="/img/react%EC%97%B0%EB%8F%994.png"></p>
-<blockquote>
-<p>출처 : <a target="_blank" rel="noopener" href="https://hello-bryan.tistory.com/121?category=695724">https://hello-bryan.tistory.com/121?category=695724</a></p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%99/" data-id="ckf3rkxfe0003ukv4dyfdd8tp" class="article-share-link">공유</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">다음 &amp;raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">다음 &amp;raquo;</a>
   </nav>
 
 </section>
@@ -1027,7 +1024,11 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
       <ul>
         
           <li>
-            <a href="/2020/09/28/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/2%EC%9D%BC%EC%B0%A8/">(no title)</a>
+            <a href="/2020/09/28/do%20it%20%EB%A6%AC%EC%95%A1%ED%8A%B8/%EC%97%90%EC%96%B4%EB%B9%84%EC%95%A4%EB%B9%841/">Do it! 리액트 프로그래밍 3일차</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/28/do%20it%20%EB%A6%AC%EC%95%A1%ED%8A%B8/2%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
           </li>
         
           <li>
@@ -1040,10 +1041,6 @@ ES6에서는 이전 자바스크립트 문법에서 객체를 선언할 때 불�
         
           <li>
             <a href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">기획) 기능정의</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
           </li>
         
       </ul>

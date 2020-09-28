@@ -65,6 +65,125 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-쓰레기통/react express 연동/react express 연동" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%99/" class="article-date">
+  <time datetime="2020-09-08T02:09:25.000Z" itemprop="datePublished">2020-09-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/">인턴</a>►<a class="article-category-link" href="/categories/%EC%9D%B8%ED%84%B4/React-js/">React.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%99/">React x Express 연동하여 데이터 전송하기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="React-x-Express-연동하기"><a href="#React-x-Express-연동하기" class="headerlink" title="React x Express 연동하기"></a>React x Express 연동하기</h1><p>우선 CRA를 통해 리액트 프로젝트를 시작하자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app react_express</span><br><span class="line">cd react_express</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>npx</strong>는 반복되지만 자주 쓰이는 형태 (보일러플레이트) 에 효과적이다   </p>
+<p> 최신버전에 해당하는 패키지를 설치하여 실행하고, 실행된 이후에 해당 패키지를 제거한다.  </p>
+</blockquote>
+<p>그럼 익숙한 창이 나온다.</p>
+<p><img src="/img/react%EC%97%B0%EB%8F%99.png">    </p>
+<p>  그런다음  src 아래에 있는 <code>App.js</code> 를 수정하자</p>
+<figure class="highlight javascript"><figcaption><span>App.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> logo <span class="keyword">from</span> <span class="string">&#x27;./logo.svg&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./App.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="built_in">super</span>(props);</span><br><span class="line">    <span class="built_in">this</span>.state=&#123;</span><br><span class="line">      username:<span class="literal">null</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  render()&#123;</span><br><span class="line">      <span class="keyword">const</span> &#123;username&#125; = <span class="built_in">this</span>.state;</span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">        &lt;div className=<span class="string">&quot;App&quot;</span>&gt;</span><br><span class="line">          &lt;header className=<span class="string">&quot;App-header&quot;</span>&gt;</span><br><span class="line">            &lt;img src=&#123;logo&#125; className=<span class="string">&quot;App-logo&quot;</span> alt=<span class="string">&quot;logo&quot;</span> /&gt;</span><br><span class="line">            &#123;username ? <span class="string">`Hello <span class="subst">$&#123;username&#125;</span>`</span> : <span class="string">&#x27;Hello World&#x27;</span>&#125;</span><br><span class="line">          &lt;/header&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"> 		 );</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br></pre></td></tr></table></figure>      
+
+
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username ? &#96;Hello $&#123;username&#125;&#96; : &#39;Hello World&#39;</span><br></pre></td></tr></table></figure>
+
+<p>에서  username 이 <code>null</code> 이기 때문에  <code>Hello world</code> 가 출력 됨은 자명하다. 그럼 이 username 을 express로 만든 서버에서 받아오도록 하자  </p>
+<p>서버쪽을 구현하기 위해 express를 설치해 주자</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm add express --save</span><br></pre></td></tr></table></figure>
+
+
+
+<p>json형식으로 데이터를 주고받기 위해 <code>body-parser</code>도 설치해준다</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install body-parser</span><br></pre></td></tr></table></figure>
+
+
+
+<p>root에서 servers라는 디렉터리를 만들고 <code>server.js</code>파일을 생성하고 다음과 같이 작성하자.</p>
+<figure class="highlight javascript"><figcaption><span>server.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="keyword">const</span> bodyParser =  <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> port = process.env.PORT || <span class="number">5000</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.use(bodyParser.json());</span><br><span class="line">app.use(<span class="string">&#x27;/api&#x27;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>   &#123;</span><br><span class="line">    res.json(&#123;<span class="attr">username</span>:<span class="string">&#x27;dongwook&#x27;</span>&#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(port , <span class="function">() =&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`express is running on <span class="subst">$&#123;port&#125;</span>`</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>     
+
+
+
+<p><code>localhost:5000/api</code>  에 접속해 주면 다음과 같은 결과가 나온다.</p>
+<p><img src="/img/react%EC%97%B0%EB%8F%992.png">    </p>
+<p>이제 client 쪽에서 이 데이터를 받아오게 하면 된다.</p>
+<p><code>App.js</code>에서 <code>componentDidMount()</code>를 추가한다.</p>
+<blockquote>
+<p><strong>React의 라이프 사이클</strong></p>
+<p>기본적으로 React 라이브러리가 처음 컴포넌트를 실행할 때는 다음순서를 따른다.</p>
+<ol>
+<li><p>constructor()</p>
+</li>
+<li><p>componentWillMount()</p>
+</li>
+<li><p>render()</p>
+</li>
+<li><p>componentDidMount()</p>
+<p>그리고 props혹은 state가 변경될 때는 shouldComponentUpdate() 함수 등이 사용되어 실질적으로 render 함수를 불러와 뷰를 갱신하게 된다. 또한 컴포넌트가 삭제될 때는 componentWillUnmount 함수가 실행된다.</p>
+<p>일반적으로 API를 불러와서 웹 사이트 화면에 특정한 뷰를 출력하고자 한다면 <code>componentDidMount()</code> 함수에서 API를 비동기적으로 호출하면 된다.</p>
+</li>
+</ol>
+</blockquote>
+<figure class="highlight javascript"><figcaption><span>App.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">componentDidMoint()&#123;</span><br><span class="line">	fetch(<span class="string">&#x27;http://localhost:5000/api&#x27;</span>)</span><br><span class="line">	.then(<span class="function"><span class="params">res</span> =&gt;</span> res.json())</span><br><span class="line">	.then(<span class="function"><span class="params">data</span> =&gt;</span> <span class="built_in">this</span>.setState(&#123;<span class="attr">username</span>: data.username&#125;));</span><br><span class="line">&#125;</span><br><span class="line">render()&#123;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>     
+
+
+
+
+
+<p>이제 클라이언트에서 접속을하고 개발자 도구의 console로 들어가 보면 다음과 같이 에러가 떠있다.</p>
+<p><img src="/img/react%EC%97%B0%EB%8F%993.png"></p>
+<p>CORS 정책에 의해서 다른 포트나 다른 도메인에서 온 요청을 허용하지 않는것인데 server.js에서 cors를 허용하는 방법으로 변경해 보자. 먼저 cors를 설치해주고</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install cors --save</span><br></pre></td></tr></table></figure>
+
+
+
+<p>  server.js에 다음 두 줄을 추가해주자.</p>
+<figure class="highlight javascript"><figcaption><span>server.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cors = <span class="built_in">require</span>(<span class="string">&#x27;cors&#x27;</span>);</span><br><span class="line"></span><br><span class="line">app.use(cors());</span><br></pre></td></tr></table></figure>       
+
+
+
+
+
+<p>그런 다음 서버를 재시작하면 제대로 데이터가 전달 된 것을 확인할 수 있다.</p>
+<p><img src="/img/react%EC%97%B0%EB%8F%994.png"></p>
+<blockquote>
+<p>출처 : <a target="_blank" rel="noopener" href="https://hello-bryan.tistory.com/121?category=695724">https://hello-bryan.tistory.com/121?category=695724</a></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheal3.github.io/2020/09/08/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/react%20express%20%EC%97%B0%EB%8F%99/react%20express%20%EC%97%B0%EB%8F%99/" data-id="ckf3rkxfe0003ukv4dyfdd8tp" class="article-share-link">공유</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-쓰레기통/고객관리예제 공부/project-13" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/09/04/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-13/" class="article-date">
@@ -701,80 +820,11 @@
 
 
   
-    <article id="post-쓰레기통/고객관리예제 공부/project-4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/02/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-4/" class="article-date">
-  <time datetime="2020-09-02T09:15:20.000Z" itemprop="datePublished">2020-09-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/">쓰레기통</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-4/">React와 Node.js로 만드는 고객 관리 시스템 개발-4</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="고객-컴포넌트-만들기"><a href="#고객-컴포넌트-만들기" class="headerlink" title="고객 컴포넌트 만들기"></a>고객 컴포넌트 만들기</h1><p>컴포넌트란 웹 문서에서 어떠한 내용을 보여주기 위한 기본적인 단위이다.</p>
-<p>고객 컴포넌트란 한 명의 고객에 대한 정보를 보여주기 위한 기능이라고 보면 되겠다.</p>
-<h2>Customer.js</h2>
-
-<p><code>src</code> 디렉터리 아래에 <code>components</code> 디렉터리를 만들고 <code>Customer.js</code> 컴포넌트를 생성해주자.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Customer.js</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Customer</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;염소&lt;/h2&gt;</span><br><span class="line">        &lt;p&gt;<span class="number">031223</span>&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;여자&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;대학생&lt;/p&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Customer;</span><br></pre></td></tr></table></figure>
-
-
-<pre><code>export를 해줘야 컴포넌트를 분리하고 다른 컴포넌트에서 쓸 수 있다.</code></pre>
-<h2>App.js</h2>
-
-<p><code>App.js</code> 에서 방금 만든 Customer 컴포넌트를 사용해 보자</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> Customer <span class="keyword">from</span> <span class="string">&#x27;./components/Customer&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./App.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Customer/&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>다음과 같은 오류가 나왔는데 React는 오류가 발생하면 이렇게 나오는구나 신기했다.</p>
-<p><img src="/img/4%EC%98%A4%EB%A5%98.png"></p>
-<p>오류를 고쳐주면 다음과 같은 결과창이 나온다.</p>
-<p><strong>적용 결과</strong><br><img src="/img/4%EA%B2%B0%EA%B3%BC.png"></p>
-<h2>Props를 이용한 구조화</h2>
-
-<p>Props를 이용해서 <code>App.js</code> 에서 데이터를 가진 상태에서 고객에 대한 정보를 출력하도록 구조화 하자</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//App.js</span></span><br><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> Customer <span class="keyword">from</span> <span class="string">&#x27;./components/Customer&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./App.css&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> customer = &#123;</span><br><span class="line">  <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;염소&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;birthday&#x27;</span>:<span class="string">&#x27;031223&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;gender&#x27;</span>:<span class="string">&#x27;여자&#x27;</span>,</span><br><span class="line">  <span class="string">&#x27;job&#x27;</span>:<span class="string">&#x27;대학생&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;Customer</span><br><span class="line">    name=&#123;customer.name&#125;</span><br><span class="line">    birthday=&#123;customer.birthday&#125;</span><br><span class="line">    gender=&#123;customer.gender&#125;</span><br><span class="line">    job=&#123;customer.job&#125;/&gt;</span><br><span class="line">  );</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>그런다음 <code>Customer.js</code> 에 가서 다음과 같이 코드를 수정하자</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Customer</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;&#123;<span class="built_in">this</span>.props.name&#125;&lt;/h2&gt;</span><br><span class="line">        &lt;p&gt;&#123;<span class="built_in">this</span>.props.birthday&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;<span class="built_in">this</span>.props.gender&#125;&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;&#123;<span class="built_in">this</span>.props.job&#125;&lt;/p&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Customer;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>확인해보면 결과는 동일한 것을 알 수 있다.<br><code>Customer.js</code>에 있는 형식에 <code>const = customer</code> 의 데이터를 넣은 것이라고 이해하면 될 것 같다.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://cheal3.github.io/2020/09/02/%EC%93%B0%EB%A0%88%EA%B8%B0%ED%86%B5/%EA%B3%A0%EA%B0%9D%EA%B4%80%EB%A6%AC%EC%98%88%EC%A0%9C%20%EA%B3%B5%EB%B6%80/project-4/" data-id="ckf3rkxfv000iukv4cgowgcj2" class="article-share-link">공유</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&amp;laquo; 이전</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">다음 &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&amp;laquo; 이전</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">다음 &amp;raquo;</a>
   </nav>
 
 </section>
@@ -813,7 +863,11 @@
       <ul>
         
           <li>
-            <a href="/2020/09/28/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/2%EC%9D%BC%EC%B0%A8/">(no title)</a>
+            <a href="/2020/09/28/do%20it%20%EB%A6%AC%EC%95%A1%ED%8A%B8/%EC%97%90%EC%96%B4%EB%B9%84%EC%95%A4%EB%B9%841/">Do it! 리액트 프로그래밍 3일차</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/28/do%20it%20%EB%A6%AC%EC%95%A1%ED%8A%B8/2%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
           </li>
         
           <li>
@@ -826,10 +880,6 @@
         
           <li>
             <a href="/2020/09/15/%EA%B3%B5%EB%B6%80/%EC%9E%A1%EA%B3%B5%EB%B6%80/%ED%91%B8%EC%8B%9C%EC%95%8C%EB%A6%BC/">기획) 기능정의</a>
-          </li>
-        
-          <li>
-            <a href="/2020/09/14/doit%EB%A6%AC%EC%95%A1%ED%8A%B8/1%EC%9D%BC%EC%B0%A8/">Do it! 리액트 프로그래밍 1일차</a>
           </li>
         
       </ul>
